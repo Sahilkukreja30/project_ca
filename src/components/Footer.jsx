@@ -57,29 +57,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t">
-      {/* Pre-footer CTA band */}
-      <div className="bg-slate-800 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-10 md:py-12">
-          <div className="flex flex-col items-start justify-between gap-6 rounded-2xl bg-slate-900/40 px-6 py-8 md:flex-row md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-                Let&apos;s discuss your requirements
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm/6 text-slate-200">
-                From Taxation and Regulatory to Transaction Advisory and Assurance—
-                we&apos;ll tailor a solution to your goals.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl border border-teal-400/30 bg-teal-500 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-300"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main footer grid */}
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">

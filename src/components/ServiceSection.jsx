@@ -2,8 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 export default function ServicesSection() {
+  const fadeSlide = (dir = "left", distance = 60) => {
+    const x = dir === "left" ? -distance : dir === "right" ? distance : 0;
+    const y = dir === "up" ? -distance : dir === "down" ? distance : 0;
+    return {
+      hidden: { opacity: 0, x, y },
+      show: {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+      },
+    };
+  };
   const services = [
     {
       tag: "Direct",
@@ -11,7 +24,7 @@ export default function ServicesSection() {
       blurb:
         "Corporate tax, cross-border structuring, transfer pricing and litigation support.",
       href: "/services/direct-international-tax",
-      img: "/services/service_1.jpg",
+      img: "/service1.png",
     },
     {
       tag: "Regulatory",
@@ -19,23 +32,21 @@ export default function ServicesSection() {
       blurb:
         "Company law, FEMA/FDI advisory, registrations and ongoing compliance.",
       href: "/services/regulatory-fema-fdi",
-      img: "/services/service_2.jpg",
+      img: "/service2.png",
     },
     {
       tag: "Transactions",
       title: "Transaction Advisory",
-      blurb:
-        "Valuation, financial modelling, M&A support, due diligence.",
+      blurb: "Valuation, financial modelling, M&A support, due diligence.",
       href: "/services/transaction-advisory",
-      img: "/services/service_3.jpg",
+      img: "/service3.png",
     },
     {
       tag: "Audit",
       title: "Audit & Assurance",
-      blurb:
-        "Statutory, internal and special audits; risk advisory.",
+      blurb: "Statutory, internal and special audits; risk advisory.",
       href: "/services/audit-assurance",
-      img: "/services/service_4.jpg",
+      img: "/service4.png",
     },
   ];
 
@@ -64,7 +75,10 @@ export default function ServicesSection() {
         </div>
 
         {/* Cards */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div variants={fadeSlide("left", 80)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}  className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <article
               key={s.href}
@@ -77,9 +91,11 @@ export default function ServicesSection() {
                   alt={s.title}
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover"
+                  className="object-cover transform-gpu transition-transform duration-500 ease-out will-change-transform group-hover:scale-110"
+                  priority={false}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
+                {/* gradient overlay stays so text is readable even while zooming */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent transition-opacity duration-300 group-hover:opacity-40" />
                 {/* Tag */}
                 <span className="absolute left-2 top-2 inline-flex items-center rounded-lg bg-white/85 px-2 py-1 text-[11px] font-semibold text-[#0e2f5b] shadow-sm">
                   {s.tag}
@@ -87,7 +103,7 @@ export default function ServicesSection() {
               </div>
 
               {/* Text */}
-              <div className="px-2 pb-1 pt-3">
+              <div className="px-2 pb-1 pt-3 transition-opacity duration-300 group-hover:opacity-60">
                 <Link
                   href={s.href}
                   className="text-base font-semibold text-white underline-offset-4 hover:underline"
@@ -106,7 +122,7 @@ export default function ServicesSection() {
               </div>
             </article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

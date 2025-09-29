@@ -4,14 +4,15 @@ import { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
-
+import { Autoplay, Pagination, Navigation, EffectFade, Keyboard } from "swiper/modules";
+import { motion } from "framer-motion";
 // Swiper styles (global; safe in client component)
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import ServicesSection from "@/components/ServiceSection";
+import MissionVision from "@/components/Mission";
 
 
 
@@ -59,16 +60,6 @@ export default function HomePage() {
   }, []);
 
 
-  const statsData = [
-    { key: 'years', label: 'Years of Practice', value: yearSpan(2013), hint: 'Established 2013' },
-    { key: 'partners', label: 'Partners', value: 2 },
-    { key: 'qualified', label: 'Qualified Professionals', value: 5 },
-    { key: 'semi', label: 'Semi‑qualified', value: 10 },
-    { key: 'assist', label: 'Staff Assistants', value: 9 },
-    { key: 'admin', label: 'Admin Team', value: 3 },
-    { key: 'locations', label: 'Locations', value: 2, hint: 'Mumbai & Dubai' },
-    { key: 'clients', label: 'Clients Served', value: 150 },
-  ];
 
   // Refs for counters
   // ---- HERO SLIDES (replace image paths with your assets in /public) ----
@@ -76,23 +67,23 @@ export default function HomePage() {
     () => [
       {
         src: "/slide1.png",
-        title: "Assurance you can act on",
+        title: "Strong Foundations, Brighter Horizons",
         subtitle:
-          "Clear reporting, sharper decisions, and audit support that actually helps leadership move faster.",
+          "Structured Growth for modern businesses",
         cta: { label: "Explore Services", href: "/services/audit-assurance" },
       },
       {
         src: "/slide2.png",
-        title: "Tax strategies built for growth",
+        title: "Build on Collaboration, Driven by Expertise",
         subtitle:
-          "From India to overseas jurisdictions — proactive direct & international tax planning, filings and representations.",
+          "Together, we create solutions that last.",
         cta: { label: "Direct & International Tax", href: "/services/direct-international-tax" },
       },
       {
         src: "/slide3.png",
-        title: "Regulatory clarity, zero surprises",
+        title: "Unlocking New Possibilities",
         subtitle:
-          "FEMA/FDI, RBI and Companies Act compliance handled end‑to‑end so you can focus on building.",
+          "From challenges to opportunities",
         cta: { label: "Regulatory & FEMA/FDI", href: "/services/regulatory-fema-fdi" },
       },
     ],
@@ -105,58 +96,31 @@ export default function HomePage() {
     { src: "/hero2.jpeg", name: "CA Nishant S Chitalia", role: "Co‑Founder & Partner" },
   ];
 
-
-
-  // ---- SERVICES (cards with teal gradient background) ----
-  const services = [
-    {
-      title: "Direct & International Tax",
-      href: "/services/direct-international-tax",
-      img: "/services/direct-tax.jpg",
-      blurb: "Planning, filings, assessments & representations across jurisdictions.",
-    },
-    {
-      title: "Regulatory, FEMA & FDI",
-      href: "/services/regulatory-fema-fdi",
-      img: "/services/fema.jpg",
-      blurb: "RBI/FDI advisory, filings and end‑to‑end regulatory compliance.",
-    },
-    {
-      title: "Transaction Advisory",
-      href: "/services/transaction-advisory",
-      img: "/services/transactions.jpg",
-      blurb: "Valuation, due diligence, structuring and M&A support.",
-    },
-    {
-      title: "Audit & Assurance",
-      href: "/services/audit-assurance",
-      img: "/services/audit.jpg",
-      blurb: "Statutory, internal, trust and special purpose audits.",
-    },
-    {
-      title: "Accounting & Payroll",
-      href: "/services/accounting-payroll",
-      img: "/services/accounting.jpg",
-      blurb: "Managed books, payroll, MIS and controllership solutions.",
-    },
-    {
-      title: "Company Law & Secretarial",
-      href: "/services/companies-act",
-      img: "/services/secretarial.jpg",
-      blurb: "Incorporation, ROC filings and governance support.",
-    },
-  ];
+  const fadeSlide = (dir = "left", distance = 60) => {
+    const x = dir === "left" ? -distance : dir === "right" ? distance : 0;
+    const y = dir === "up" ? -distance : dir === "down" ? distance : 0;
+    return {
+      hidden: { opacity: 0, x, y },
+      show: {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+      },
+    };
+  };
 
   return (
     <main className="bg-white">
-      {/* ---------------- Hero: Swiper like DPNC ---------------- */}
-      <section className="relative h-[70vh] min-h-[520px] w-full">
+
+      <section className="relative h-[80vh] min-h-[520px] w-full">
         <Swiper
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
+          modules={[Autoplay, Pagination, Navigation, EffectFade, Keyboard]}
           effect="fade"
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation
+          keyboard
           loop
           className="h-full"
         >
@@ -168,27 +132,27 @@ export default function HomePage() {
                   alt={s.title}
                   fill
                   priority={i === 0}
-                  sizes="100vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[#0F2742]/60" />
                 <div className="absolute inset-0 mx-auto flex max-w-7xl items-center px-6">
                   <div className="max-w-2xl">
-                    <h1 className="text-3xl font-semibold text-white md:text-5xl">{s.title}</h1>
+                    <h1 className="text-3xl font-semibold text-white md:text-6xl">{s.title}</h1>
                     <p className="mt-4 text-base text-slate-100 md:text-lg">{s.subtitle}</p>
                     <div className="mt-6 flex gap-3">
                       <Link
-                        href={s.cta.href}
-                        className="rounded-full bg-[#1FA3A3] px-5 py-3 text-sm font-medium text-white shadow hover:brightness-95"
-                      >
-                        {s.cta.label}
-                      </Link>
-                      <Link
                         href="/contact"
-                        className="rounded-full border border-white/60 px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/10"
+                        className="rounded-full border bg-[#1FA3A3] hover:bg-teal-800 border-white/55 px-5 py-3 text-sm font-medium text-white/90 "
                       >
                         Book a consultation
                       </Link>
+                      <Link
+                        href={s.cta.href}
+                        className="rounded-full  px-5 py-3 bg-white/30 text-sm font-medium border-white/60 text-white hover:bg-white/10 shadow hover:brightness-95"
+                      >
+                        {s.cta.label}
+                      </Link>
+
                     </div>
                   </div>
                 </div>
@@ -199,10 +163,13 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- About: Partner carousel + copy ---------------- */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+      <section className="mx-auto w-7xl py-16 md:py-24">
+        <div className="grid gap-32 md:grid-cols-2">
           {/* Left: partner swiper (2s interval) */}
-          <div className="relative h-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+          <motion.div variants={fadeSlide("left", 80)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }} className="relative h-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
             <Swiper
               modules={[Autoplay, EffectFade, Pagination]}
               effect="fade"
@@ -222,10 +189,13 @@ export default function HomePage() {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
 
           {/* Right: firm intro */}
-          <div>
+          <motion.div variants={fadeSlide("right", 80)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}>
             <h2 className="text-3xl font-semibold text-[#0F2742]">Founder – CA Vishal N Shah</h2>
             <p className="mt-4 text-slate-700">
               CA Vishal N Shah, the founding partner, is an Associate Member of the Institute of Chartered Accountants of India with over a decade of experience spanning industry and professional practice.
@@ -241,7 +211,7 @@ export default function HomePage() {
                 Having worked with organizations of both national and international repute, Nishant has built a reputation for delivering practical, timely, and compliance-focused solutions. His approach emphasizes precision, client trust, and long-term value creation.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -280,40 +250,26 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Mission & Vision ---------------- */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold text-[#0F2742]">Our Mission</h3>
-            <p className="mt-3 text-slate-700">
-              To uphold the highest standards of commitment, confidentiality and competence while
-              continually improving the quality of services through ongoing learning, training and
-              strong internal controls.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold text-[#0F2742]">Our Vision</h3>
-            <p className="mt-3 text-slate-700">
-              To be recognised as a trusted, quality‑first professional services firm with a meaningful
-              presence across regions — cited for practical expertise and dependable outcomes.
-            </p>
-          </div>
-        </div>
-      </section>
+      <MissionVision />
 
       {/* ---------------- Services on teal gradient ---------------- */}
-      <ServicesSection/>
+      <ServicesSection />
 
       {/* ---------------- Final CTA ---------------- */}
-      <section className="bg-[#0F2742] py-14 text-center text-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-2xl font-semibold md:text-3xl">Let’s discuss your requirements</h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm/6 text-slate-200">
-            From tax and regulatory to transactions and assurance — we’ll tailor a solution to your goals.
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
-            <Link href="/contact" className="rounded-full bg-[#1FA3A3] px-5 py-3 text-sm font-medium text-white shadow hover:brightness-95">Contact us</Link>
-            <Link href="/services" className="rounded-full border border-white/60 px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/10">Our services</Link>
+      <section className=" bg-[#0e2f5b] py-14 text-center text-white">
+        <div className="mx-auto max-w-7xl flex flex-row justify-between border bg-gradient-to-r from-[#0e2f5b] to-[#008080] border-white/25 rounded-2xl p-8">
+          <div className="">
+            <h2 className="text-2xl font-semibold md:text-3xl">Let’s discuss your requirements</h2>
+            <p className="mx-auto mt-2 max-w-2xl text-sm/6 text-slate-200">
+              From tax and regulatory to transactions and assurance — we’ll tailor a solution to your goals.
+            </p>
           </div>
+          <motion.div variants={fadeSlide("down", 80)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.35 }}  className="mt-6 gap-3">
+            <Link href="/contact" className="rounded-full bg-[#1FA3A3] px-5 py-3 text-sm font-medium text-white shadow hover:brightness-95">Contact us</Link>
+          </motion.div>
         </div>
       </section>
     </main>
