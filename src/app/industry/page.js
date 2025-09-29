@@ -50,19 +50,30 @@ export default function IndustryPage() {
 
       {/* Grid */}
       <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-5">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center h-28 p-4 border border-[#1FA3A3] text-center text-lg font-medium transition duration-300 hover:scale-105 hover:shadow-md
-                ${index % 2 === 0 ? "bg-white text-[#0F2742]" : "bg-[#1FA3A3] text-white"}
+              className={`
+                relative flex items-center justify-center h-28 p-4 border cursor-pointer group
+                border-[#1FA3A3] rounded-2xl text-center text-lg font-medium bg-white text-[#0F2742]
+                shadow-none shadow-black/60 overflow-hidden
+                transition duration-500 ease-out
+                hover:shadow-xl
+                before:content-[''] before:absolute before:inset-0 before:bg-[#1fa3a3]
+                before:origin-left before:scale-x-0 before:transition-transform before:duration-500
+                hover:before:scale-x-100
               `}
             >
-              {industry}
+              <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+                {industry}
+              </span>
             </div>
           ))}
         </div>
       </section>
+
+
     </div>
   );
 }
