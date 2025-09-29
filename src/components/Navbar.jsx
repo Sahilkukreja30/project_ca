@@ -78,7 +78,7 @@ export default function Navbar() {
   const aboutMenuId = "about-desktop-menu";
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur">
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/55 backdrop-blur-sm">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

@@ -288,7 +288,7 @@ function StatsRibbon() {
   return (
     <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-5">
       {data.map((s) => (
-        <div key={s.key} className="flex flex-col items-center text-center">
+        <div key={s.key} className="flex flex-col border border-cyan-500/70 rounded-2xl py-2 px-10 items-center text-center scale-100 duration-300 cursor-default shadow-none hover:scale-105 hover:shadow-2xl shadow-cyan-700/20">
           {/* icon */}
           <div className="text-[#0f6fb2]">
             {s.icon && <s.icon className="h-16 w-16" aria-hidden />}
