@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-600 hover:text-slate-900"
+                    className="text-sm text-slate-600 hover:text-teal-500"
                   >
                     {item.label}
                   </Link>
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={svc.href}>
                   <Link
                     href={svc.href}
-                    className="text-sm text-slate-600 hover:text-slate-900"
+                    className="text-sm text-slate-600 hover:text-teal-500"
                   >
                     {svc.label}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                 <Mail className="h-4 w-4" aria-hidden />
                 <a
                   href={`mailto:${contact.email}`}
-                  className="hover:text-slate-900"
+                  className="hover:text-teal-500"
                 >
                   {contact.email}
                 </a>
@@ -147,10 +147,10 @@ export default function Footer() {
             © {year} {brand.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-slate-700">
+            <Link href="/privacy" className="hover:text-teal-500">
               Privacy Policy
             </Link>
-            <Link href="/disclaimer" className="hover:text-slate-700">
+            <Link href="/disclaimer" className="hover:text-teal-500">
               Disclaimer
             </Link>
           </div>

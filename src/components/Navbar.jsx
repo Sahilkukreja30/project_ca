@@ -78,7 +78,7 @@ export default function Navbar() {
   const aboutMenuId = "about-desktop-menu";
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/55 backdrop-blur-sm">
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/25 backdrop-blur-sm">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -147,7 +147,7 @@ export default function Navbar() {
                   className="block rounded px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
                   role="menuitem"
                 >
-                  Our Team
+                  About Us
                 </Link>
                 <Link
                   href="/industry"

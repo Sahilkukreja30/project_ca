@@ -163,8 +163,8 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- About: Partner carousel + copy ---------------- */}
-      <section className="mx-auto w-7xl py-16 md:py-24">
-        <div className="grid gap-32 md:grid-cols-2">
+      <section className="mx-auto w-7xl py-16 md:py-24 p-10">
+        <div className="grid gap-24 md:grid-cols-2">
           {/* Left: partner swiper (2s interval) */}
           <motion.div variants={fadeSlide("left", 80)}
             initial="hidden"
