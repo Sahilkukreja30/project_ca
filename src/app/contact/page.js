@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-
+import Link from "next/link";
 /* ---------- Inline SVG Icons & Badge ---------- */
 function IconBadge({ children, color = "#1FA3A3", className = "" }) {
     return (
@@ -81,7 +81,7 @@ export default function Contact() {
     return (
         <main className="bg-white">
             {/* HERO IMAGE with overlay */}
-            <section className="relative h-72 w-full">
+            <section className="relative h-96 w-full">
                 <Image
                     src="/contact.png"
                     alt="Contact Vishal N Shah & Co"
@@ -90,8 +90,15 @@ export default function Contact() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-[#0F2742]/70">
-                    <h1 className="text-4xl font-semibold text-white">Contact Us</h1>
+                <div className="absolute inset-0 flex items-center pl-6 bg-[#0F2742]/70">
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-5xl font-semibold text-white">Contact Us</h1>
+                    <div className="flex gap-2">
+                        <Link href={"/"} className="text-white text-lg hover:text-teal-400">Home</Link>
+                        <h1 className="text-white text-sm pt-1">{">>"}</h1>
+                        <h1 className="text-white text-lg">Contact Us</h1>
+                    </div>
+                    </div>
                 </div>
             </section>
 

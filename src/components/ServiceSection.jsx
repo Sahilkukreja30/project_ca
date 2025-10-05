@@ -31,14 +31,14 @@ export default function ServicesSection() {
       title: "Regulatory & FEMA/FDI",
       blurb:
         "Company law, FEMA/FDI advisory, registrations and ongoing compliance.",
-      href: "/services/regulatory-fema-fdi",
+      href: "/services/fema-rbi",
       img: "/service2.png",
     },
     {
       tag: "Transactions",
       title: "Transaction Advisory",
       blurb: "Valuation, financial modelling, M&A support, due diligence.",
-      href: "/services/transaction-advisory",
+      href: "/services/valuation-transactions",
       img: "/service3.png",
     },
     {

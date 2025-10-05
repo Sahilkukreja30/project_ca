@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 
 // Plain JavaScript version of the Footer component.

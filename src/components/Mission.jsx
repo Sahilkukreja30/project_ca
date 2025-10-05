@@ -1,4 +1,4 @@
-/* ===== Mission & Vision (theme: navy/teal, no cards) ===== */
+/* ===== Mission & Vision (theme: navy/teal, framer-hover on icons) ===== */
 "use client";
 import { motion } from "framer-motion";
 
@@ -16,14 +16,16 @@ export default function MissionVision() {
       },
     };
   };
+
   return (
     <section className="bg-white py-12 md:py-16">
-      <motion.div variants={fadeSlide("down", 80)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }} className="mx-auto max-w-7xl px-6">
-        {/* thin top border in brand blue */}
-
+      <motion.div
+        variants={fadeSlide("down", 80)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.35 }}
+        className="mx-auto max-w-7xl px-6"
+      >
         <div className="mt-8 grid gap-10 md:grid-cols-2">
           {/* Mission */}
           <article className="flex items-start gap-4">
@@ -56,22 +58,37 @@ export default function MissionVision() {
   );
 }
 
-/* ------- Inline SVG icons in teal (no external deps) ------- */
+/* ------- Inline SVG icons as motion.svg (hover rotates + scales) ------- */
 function IconMission(props) {
-  // target/flag + path = mission
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+    <motion.svg
+      whileHover={{ rotate: 30, scale: 1.5 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      {...props}
+    >
       <path d="M5 21V4m0 0h7a3 3 0 0 1 2.4 1.2l.2.3a2 2 0 0 0 1.6.8H21v7h-4.8a2 2 0 0 0-1.6.8l-.2.3A3 3 0 0 1 12 15H5" />
-    </svg>
+    </motion.svg>
   );
 }
+
 function IconVision(props) {
-  // eye + rays = vision
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
+    <motion.svg
+      whileHover={{ rotate: 30, scale: 1.5 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      {...props}
+    >
       <path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12Z" />
       <circle cx="12" cy="12" r="3.2" />
       <path d="M12 2v2M12 20v2M2 12H4M20 12h2M5 5l1.5 1.5M18.5 17.5 20 19M5 19l1.5-1.5M18.5 6.5 20 5" />
-    </svg>
+    </motion.svg>
   );
 }

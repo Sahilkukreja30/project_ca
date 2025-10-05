@@ -1,5 +1,6 @@
 // app/services/[slug]/page.js
-
+import Image from "next/image";
+import Link from "next/link";
 const services = {
   "direct-international-tax": {
     title: "Direct & International Tax",
@@ -22,6 +23,7 @@ const services = {
       { q: "Can you represent us before tax authorities?", a: "Yes, we assist with assessments, notices and appellate matters, preparing submissions and representation." },
       { q: "Do you handle HNI returns?", a: "Yes, including capital gains, ESOPs, foreign income and disclosure requirements." },
     ],
+    src: "/service1.png"
   },
 
   "gst-indirect-tax": {
@@ -40,6 +42,7 @@ const services = {
       { q: "Can you manage monthly filings?", a: "Yes, we manage returns, payment challans and reconciliations end-to-end." },
       { q: "Do you assist with refunds?", a: "Yes, from documentation to application and follow-through." },
     ],
+    src: "/service1.png"
   },
 
   "audit-assurance": {
@@ -58,6 +61,7 @@ const services = {
       { q: "Do you do trust audits?", a: "Yes, including societies and section-8 entities." },
       { q: "Can you review controls (ICFR)?", a: "Yes, including design, testing and remediation plans." },
     ],
+    src: "/service4.png"
   },
 
   "accounting-payroll": {
@@ -76,6 +80,7 @@ const services = {
       { q: "Can you work on our software?", a: "Yes, we work with common ERPs and accounting tools." },
       { q: "Do you provide on-site support?", a: "Remote-first with on-site visits where needed." },
     ],
+    src: "/service2.png"
   },
 
   "fema-rbi": {
@@ -94,6 +99,7 @@ const services = {
       { q: "Can you help with LO/BO setup?", a: "Yes, from application to ongoing compliances." },
       { q: "Do you handle compounding?", a: "Yes, including preparation and submissions." },
     ],
+    src: "/service3.png"
   },
 
   "companies-act": {
@@ -112,6 +118,7 @@ const services = {
       { q: "Do you assist with ESOP filings?", a: "Yes, including board/shareholder actions and forms." },
       { q: "Can you be our compliance partner?", a: "Yes, we manage an annual compliance calendar." },
     ],
+    src: "/service3.png"
   },
 
   "valuation-transactions": {
@@ -130,6 +137,7 @@ const services = {
       { q: "Can you coordinate with bankers/lawyers?", a: "Yes, we collaborate with the wider deal team." },
       { q: "Do you issue valuation reports?", a: "Yes, as per the applicable standards/regulations." },
     ],
+    src: "/service4.png"
   },
 
   "nri-foreign-desk": {
@@ -148,6 +156,7 @@ const services = {
       { q: "Do you advise on DTAA?", a: "Yes, including residency, PE and credit mechanisms." },
       { q: "Can you help with repatriation?", a: "Yes, with the certifications and filings required." },
     ],
+    src: "/service4.png"
   },
 
   "startups-msme": {
@@ -166,6 +175,7 @@ const services = {
       { q: "Do you help with DPIIT?", a: "Yes, including documentation and application." },
       { q: "What if we switch tools?", a: "We migrate data and keep the compliance calendar intact." },
     ],
+    src: "/service4.png"
   },
 };
 
@@ -183,59 +193,83 @@ export default function ServiceDetailPage({ params }) {
 
   return (
     <main className="">
+      <section className="relative h-80 w-full">
+        <Image
+          src={s.src}
+          alt="Industries Vishal N Shah & Co serves"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute  inset-0 flex items-center pl-10 bg-[#0F2742]/70">
+          <div className="flex flex-col gap-5">
+            <h1 className="text-5xl font-semibold text-white">{s.title}</h1>
+            <div className="flex gap-2">
+              <Link href={"/"} className="text-white text-lg hover:text-teal-400">Home</Link>
+              <h1 className="text-white text-sm pt-1">{">>"}</h1>
+              <Link href={"/service"} className="text-white text-lg hover:text-teal-400">Service</Link>
+              <h3 className="text-white pt-1 text-sm">{">>"}</h3>
+              <h1 className="text-white text-lg">{s.title}</h1>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 py-10">
-        <h1 className="text-3xl font-bold">{s.title}</h1>
-        <p className="mt-2 max-w-3xl ">{s.intro}</p>
-      </section>
+      <section className="mx-auto max-w-6xl py-10">
+        <section className="px-2 text-center">
+          <h1 className="text-3xl font-bold">{s.title}</h1>
+          <p className="mt-4">{s.intro}</p>
+        </section>
 
-     
-      <section className="mx-auto max-w-4xl bg-gradient-to-r from-[#0e2f5b] to-[#008080] rounded-2xl text-slate-300 p-6">
-        <h2 className="mb-3 text-xl font-semibold">What we do</h2>
-        <ul className="space-y-2 ">
-          {s.whatWeDo.map((li, i) => (
-            <li key={i} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
-              <span>{li}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
 
-      {/* How we engage */}
-      <section className="mx-auto max-w-4xl px-6 mt-10">
-        <h2 className="mb-3 text-xl font-semibold">How we engage</h2>
-        <ol className="list-decimal space-y-2 pl-6 ">
-          {s.howWeEngage.map((li, i) => (
-            <li key={i}>{li}</li>
-          ))}
-        </ol>
-      </section>
+        <section className="mt-10 bg-gradient-to-r from-[#0e2f5b] to-[#008080] rounded-2xl text-slate-300 p-6">
+          <h2 className="mb-3 text-xl font-semibold">What we do</h2>
+          <ul className="space-y-2 ">
+            {s.whatWeDo.map((li, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                <span>{li}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-4xl px-6 pb-10 mt-10">
-        <div className="rounded-2xl bg-black text-white p-6 backdrop-blur">
-          <p className="">Need clarity on a position?</p>
-          <a
-            href="/contact"
-            className="mt-4 inline-block rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white"
-          >
-            Book a consultation
-          </a>
-        </div>
-      </section>
+        {/* How we engage */}
+        <section className="mt-10">
+          <h2 className="mb-3 text-xl font-semibold">How we engage</h2>
+          <ol className="list-decimal space-y-2 pl-6 ">
+            {s.howWeEngage.map((li, i) => (
+              <li key={i}>{li}</li>
+            ))}
+          </ol>
+        </section>
 
-      {/* FAQs */}
-      <section className="mx-auto max-w-4xl px-6 pb-16">
-        <h2 className="mb-4 text-xl font-semibold">FAQs</h2>
-        <div className="space-y-3">
-          {s.faqs.map((f, i) => (
-            <details key={i} className="rounded-xl border border-black/55 p-4">
-              <summary className="cursor-pointer">{f.q}</summary>
-              <p className="mt-2 ">{f.a}</p>
-            </details>
-          ))}
-        </div>
+        {/* CTA */}
+        <section className="mt-10">
+          <div className="rounded-2xl bg-black text-white p-6 backdrop-blur">
+            <p className="">Need clarity on a position?</p>
+            <a
+              href="/contact"
+              className="mt-4 inline-block rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white"
+            >
+              Book a consultation
+            </a>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="mt-10">
+          <h2 className="mb-4 text-xl font-semibold">FAQs</h2>
+          <div className="space-y-3">
+            {s.faqs.map((f, i) => (
+              <details key={i} className="rounded-xl border border-black/55 p-4">
+                <summary className="cursor-pointer">{f.q}</summary>
+                <p className="mt-2 ">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
       </section>
     </main>
   );
