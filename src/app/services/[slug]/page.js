@@ -1,6 +1,7 @@
 // app/services/[slug]/page.js
 import Image from "next/image";
 import Link from "next/link";
+
 const services = {
   "direct-international-tax": {
     title: "Direct & International Tax",
@@ -10,8 +11,11 @@ const services = {
       "Tax planning for domestic and cross-border structures",
       "Return preparation & filings for companies, LLPs, firms and HNIs",
       "Assessments, representations and appellate support",
-      "TDS/TCS reviews, health checks and due diligence",
-      "Transfer pricing coordination with specialists where required",
+      "Advance Tax computation & planning; quarterly installments",
+      "TDS/TCS compliance reviews, due dates tracking & return filing",
+      "Notices: reply drafting, documentation, and representation before authorities",
+      "Transfer Pricing coordination (Master/Local files, benchmarking) & litigation support",
+      "DTAA interpretation, foreign tax credit & global income disclosures for NRIs",
     ],
     howWeEngage: [
       "Scoping call & document list",
@@ -34,7 +38,8 @@ const services = {
       "GST registration, migration and advisory on tax positions",
       "Monthly/quarterly returns and annual filings",
       "Reconciliations (GSTR-2B, 3B vs books) and input-credit optimisation",
-      "GST audits, departmental support and refunds processing",
+      "GST audits (incl. 9/9C), departmental liaison and end-to-end refunds",
+      "Notices & scrutiny: reply drafting, documentation and representation",
       "Indirect tax health checks and risk reviews",
     ],
     howWeEngage: ["Onboarding & data design", "Recurring compliances/MIS", "Year-end closures & audits", "Departmental liaison/refunds (as needed)"],
@@ -52,8 +57,10 @@ const services = {
     whatWeDo: [
       "Statutory audits under Companies Act and other statutes",
       "Internal audits and process reviews",
-      "Trust/NGO and special purpose audits",
-      "Risk & controls evaluation; reporting improvements",
+      "Tax Audit (Sec 44AB) and support with assessments",
+      "GST Audit (as applicable) and compliance reviews",
+      "Trust/NGO audits, concurrent/special purpose audits",
+      "Stock & inventory verification, reporting and controls", +    "Forensic procedures & fraud reviews; risk-based audit planning",
       "IFC/ICFR testing and implementation",
     ],
     howWeEngage: ["Risk assessment & audit plan", "Fieldwork & walkthroughs", "Reporting & management responses", "Follow-up reviews"],
@@ -71,9 +78,9 @@ const services = {
     whatWeDo: [
       "Day-to-day bookkeeping and reconciliations",
       "Payroll processing, TDS/ESI/EPF and payslips",
-      "Monthly closes and management reports (MIS)",
+      "Monthly closes and management reports (MIS) with KPI dashboards",
       "AR/AP ageing, vendor management and controls",
-      "CFO/controllership support as you scale",
+      "Virtual CFO/controllership oversight: budgeting, cashflow & board packs",
     ],
     howWeEngage: ["Tooling & chart-of-accounts setup", "Steady-state books & payroll", "Monthly closes & MIS", "Audit & compliance hand-off"],
     faqs: [
@@ -91,7 +98,8 @@ const services = {
       "FEMA advisory for FDI, ODI and ECBs",
       "RBI filings (FC-GPR, FC-TRS, FLA and others)",
       "Setting up liaison/branch/project offices",
-      "Compounding applications & regularisations",
+      "Compounding applications & regularisations; demand/refund coordination",
+      "Repatriation planning with tax/DTAA alignment",
       "Share transfers, pricing and reporting",
     ],
     howWeEngage: ["Feasibility & route analysis", "Documentation & filings", "Regulatory liaison", "Post-approval compliance calendar"],
@@ -107,10 +115,13 @@ const services = {
     intro:
       "Compliance under the Companies Act, 2013 demands precision, timeliness, and expert understanding of corporate law. Our Secretarial team offers a complete suite of services — from company incorporation and LLP registration to routine filings, share transfers, and annual returns. We ensure proper documentation of board and shareholder meetings, maintain statutory registers, and assist in event-based compliance such as change of directors, capital restructuring, and closure proceedings. For growing organizations, we act as your outsourced Company Secretary function, helping you meet every ROC and MCA requirement with accuracy. Our proactive approach ensures governance standards are met without disrupting business continuity.",
     whatWeDo: [
-      "Company/LLP incorporation and conversions",
+      "Company/LLP incorporation and conversions; Partnership setup",
+      "Section 8 (NGO) registration and governance support",
       "Director/KMP changes, share issues/transfers",
       "Annual returns, event-based ROC filings",
       "Board support — notices, minutes and registers",
+      "IEC (Import-Export Code) registration and post-registration guidance",
+      "CSR registration, 12A/80G assistance & NGO Darpan/FCRA coordination",
       "Dormant/strike-off processes",
     ],
     howWeEngage: ["Entity scoping & name checks", "Incorporation & PAN/TAN", "Compliance calendar setup", "Ongoing board/ROC support"],
@@ -128,8 +139,9 @@ const services = {
     whatWeDo: [
       "Business & securities valuation for deals and regulatory needs",
       "Financial models and scenario planning",
-      "Buy-side/sell-side due diligence",
-      "Data room prep, Q&A and SPA support",
+      "Buy-side/sell-side due diligence & feasibility studies",
+      "CMA data & Project Reports for banks/investors",
+      "Data room prep, Q&A, SPA support; JV structuring",
       "Post-deal integration and reporting",
     ],
     howWeEngage: ["Scope & data request", "Analysis & modelling", "Review meetings", "Reports & hand-off"],
@@ -146,9 +158,9 @@ const services = {
       "Expanding across borders requires reliable local expertise. Our NRI & Foreign Desk offers specialized advisory for non-resident individuals and overseas businesses operating in or from India. We assist with entity setup, taxation, FEMA compliance, repatriation planning, and DTAA interpretations. From obtaining PAN, TAN, or GST registration to managing regular tax filings and certifications, we provide end-to-end execution with confidentiality and precision. Our team also coordinates with overseas advisors to align Indian compliances with global obligations. Whether you’re investing in India, managing foreign income, or seeking repatriation solutions, we ensure your cross-border journey is smooth and compliant.",
     whatWeDo: [
       "Entity setup and registrations",
-      "NRI taxation, DTAA positions and disclosures",
+      "NRI taxation, DTAA positions and global income disclosures",
       "Banking/KYC, PAN/Aadhaar and FEMA touchpoints",
-      "Repatriation planning and certifications",
+      "Repatriation planning, certifications & FEMA compliance",
       "Coordination with overseas advisors",
     ],
     howWeEngage: ["Discovery & route selection", "Registrations & banking", "Tax & FEMA compliances", "Ongoing advisory"],
@@ -167,7 +179,7 @@ const services = {
       "Entity setup and founder agreements coordination",
       "Accounting stack, payroll and dashboards",
       "Startup India, DPIIT and MSME registrations",
-      "Grant/benefit applications and certifications",
+      "Grant/benefit applications and certifications; bank loan assistance",
       "Investor diligence readiness",
     ],
     howWeEngage: ["Kick-off & stack setup", "Monthly closes & compliances", "Quarterly reviews", "Round-readiness support"],
@@ -192,80 +204,221 @@ export default function ServiceDetailPage({ params }) {
   }
 
   return (
-    <main className="">
-      <section className="relative h-80 w-full">
+    <main>
+      {/* Hero */}
+      <section className="relative h-56 sm:h-64 lg:h-80 w-full">
         <Image
           src={s.src}
-          alt="Industries Vishal N Shah & Co serves"
+          alt={`${s.title} banner`}
           fill
           sizes="100vw"
           className="object-cover"
           priority
         />
-        <div className="absolute  inset-0 flex items-center pl-10 bg-[#0F2742]/70">
-          <div className="flex flex-col gap-5">
-            <h1 className="text-5xl font-semibold text-white">{s.title}</h1>
-            <div className="flex gap-2">
-              <Link href={"/"} className="text-white text-lg hover:text-teal-400">Home</Link>
-              <h1 className="text-white text-sm pt-1">{">>"}</h1>
-              <Link href={"/service"} className="text-white text-lg hover:text-teal-400">Service</Link>
-              <h3 className="text-white pt-1 text-sm">{">>"}</h3>
-              <h1 className="text-white text-lg">{s.title}</h1>
+        <div className="absolute inset-0 flex items-center bg-[#0F2742]/70">
+          <div className="flex flex-col gap-3 sm:gap-4 pl-4 sm:pl-8 lg:pl-12">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-white">
+              {s.title}
+            </h1>
+            <div className="flex flex-wrap items-center gap-1 sm:gap-2">
+              <Link href="/" className="text-white text-sm sm:text-base hover:text-teal-400">Home</Link>
+              <span className="text-white text-xs sm:text-sm">{">>"}</span>
+              <Link href="/service" className="text-white text-sm sm:text-base hover:text-teal-400">Service</Link>
+              <span className="text-white text-xs sm:text-sm">{">>"}</span>
+              <span className="text-white text-sm sm:text-base">{s.title}</span>
             </div>
           </div>
         </div>
       </section>
-      {/* Hero */}
-      <section className="mx-auto max-w-6xl py-10">
-        <section className="px-2 text-center">
-          <h1 className="text-3xl font-bold">{s.title}</h1>
-          <p className="mt-4">{s.intro}</p>
+
+      {/* Body */}
+      <section className="mx-auto max-w-6xl py-8 sm:py-10 lg:py-12 px-4 sm:px-6">
+        {/* Intro */}
+        <section className="text-center max-w-3xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">{s.title}</h1>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-slate-700">
+            {s.intro}
+          </p>
         </section>
 
-
-        <section className="mt-10 bg-gradient-to-r from-[#0e2f5b] to-[#008080] rounded-2xl text-slate-300 p-6">
-          <h2 className="mb-3 text-xl font-semibold">What we do</h2>
-          <ul className="space-y-2 ">
+        {/* What we do */}
+        <section className="mt-8 sm:mt-10 bg-gradient-to-r from-[#0e2f5b] to-[#008080] rounded-2xl text-slate-200 p-5 sm:p-6 lg:p-8">
+          <h2 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold">What we do</h2>
+          {/* 1 col on mobile -> 2 cols md+ */}
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
             {s.whatWeDo.map((li, i) => (
-              <li key={i} className="flex gap-2">
+              <li key={i} className="flex items-start gap-2">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
-                <span>{li}</span>
+                <span className="text-sm sm:text-base">{li}</span>
               </li>
             ))}
           </ul>
         </section>
 
         {/* How we engage */}
+        {/* How we engage */}
         <section className="mt-10">
-          <h2 className="mb-3 text-xl font-semibold">How we engage</h2>
-          <ol className="list-decimal space-y-2 pl-6 ">
-            {s.howWeEngage.map((li, i) => (
-              <li key={i}>{li}</li>
-            ))}
-          </ol>
-        </section>
+          <h2 className="mb-4 text-xl sm:text-2xl font-semibold text-[#0F2742]">How we engage</h2>
 
-        {/* CTA */}
-        <section className="mt-10">
-          <div className="rounded-2xl bg-black text-white p-6 backdrop-blur">
-            <p className="">Need clarity on a position?</p>
-            <a
-              href="/contact"
-              className="mt-4 inline-block rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white"
+          <div className="relative">
+            {/* vertical line on mobile; hidden on md where we switch to grid */}
+            <div className="absolute left-[14px] top-0 bottom-0 w-0.5 bg-slate-200 md:hidden" />
+
+            <ol
+              className="
+        grid grid-cols-1 gap-4
+        md:grid-cols-2 md:gap-6
+      "
             >
-              Book a consultation
-            </a>
+              {s.howWeEngage.map((step, i) => (
+                <li
+                  key={i}
+                  className="
+            relative flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4
+            shadow-sm hover:shadow-md transition
+          "
+                >
+                  {/* mobile timeline dot */}
+                  <span
+                    className="
+              md:hidden relative z-10 mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center
+              rounded-full bg-teal-600 text-white text-sm font-semibold
+              ring-4 ring-white
+            "
+                    aria-hidden
+                  >
+                    {i + 1}
+                  </span>
+
+                  {/* desktop number pill */}
+                  <span
+                    className="
+              hidden md:inline-flex h-8 w-8 shrink-0 items-center justify-center
+              rounded-full bg-teal-600 text-white text-sm font-semibold
+            "
+                    aria-hidden
+                  >
+                    {i + 1}
+                  </span>
+
+                  <div className="flex-1">
+                    <h3 className="text-base sm:text-lg font-medium text-[#0F2742]">
+                      {step}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {[
+                        "We align scope, timelines, and data needs to avoid surprises.",
+                        "Clear positions, assumptions, and deliverables before we execute.",
+                        "Hands-on execution with checkpoints and transparent updates.",
+                        "Representation and closure with a tidy hand-off of artefacts.",
+                      ][i] || "Structured, transparent, and outcome-focused."}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
-        {/* FAQs */}
+
+        {/* CTA */}
+        {/* CTA */}
         <section className="mt-10">
-          <h2 className="mb-4 text-xl font-semibold">FAQs</h2>
-          <div className="space-y-3">
+          <div
+            className="
+      relative overflow-hidden rounded-2xl
+      bg-gradient-to-r from-[#0e2f5b] to-[#008080]
+      text-white
+      p-6 sm:p-8
+      shadow-lg
+    "
+          >
+            {/* subtle pattern */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-20"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.25) 1px, transparent 1px)",
+                backgroundSize: "20px 20px",
+              }}
+              aria-hidden
+            />
+
+            <div className="relative z-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <h3 className="text-xl sm:text-2xl font-semibold">
+                  Need clarity on a position?
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-teal-50/90">
+                  Get a quick, actionable view on your tax or compliance question.
+                  We’ll review your facts and respond with a practical path forward.
+                </p>
+
+                {/* value bullets */}
+                <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
+                    30-min discovery call
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
+                    Clear next steps
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
+                    Confidential & precise
+                  </li>
+                </ul>
+              </div>
+
+              {/* actions */}
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 md:items-center">
+                <a
+                  href="/contact"
+                  className="
+            inline-flex items-center justify-center rounded-full
+            bg-white text-[#0F2742]
+            px-5 py-2.5 text-sm sm:text-base font-semibold
+            hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/60
+          "
+                  aria-label="Book a consultation"
+                >
+                  Book a consultation
+                </a>
+
+                <a
+                  href="mailto:office@vnsca.in"
+                  className="
+            inline-flex items-center justify-center rounded-full
+            bg-white/10 backdrop-blur px-5 py-2.5 text-sm sm:text-base font-semibold
+            ring-1 ring-white/30 hover:bg-white/15
+            focus:outline-none focus:ring-2 focus:ring-white/60
+          "
+                  aria-label="Email us"
+                >
+                  Email us
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* FAQs */}
+        <section className="mt-8 sm:mt-10">
+          <h2 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold">FAQs</h2>
+          <div className="space-y-2 sm:space-y-3">
             {s.faqs.map((f, i) => (
-              <details key={i} className="rounded-xl border border-black/55 p-4">
-                <summary className="cursor-pointer">{f.q}</summary>
-                <p className="mt-2 ">{f.a}</p>
+              <details
+                key={i}
+                className="rounded-xl border border-black/20 p-4 sm:p-5"
+              >
+                <summary className="cursor-pointer text-sm sm:text-base font-medium">
+                  {f.q}
+                </summary>
+                <p className="mt-2 text-sm sm:text-base text-slate-700">
+                  {f.a}
+                </p>
               </details>
             ))}
           </div>

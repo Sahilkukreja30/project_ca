@@ -15,7 +15,6 @@ import MissionVision from "../components/Mission";
 export default function HomePage() {
   // Count-up animation logic
   useEffect(() => {
-    const els = document.querySelectorAll("[data-countto]");
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
     const animate = (el) => {
@@ -77,8 +76,8 @@ export default function HomePage() {
   );
 
   const partnerSlides = [
-    { src: "/hero.jpeg", name: "CA Vishal N Shah", role: "Founder & Partner" },
-    { src: "/hero2.jpeg", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
+    { src: "/hero.png", name: "CA Vishal N Shah", role: "Founder & Partner" },
+    { src: "/hero2.png", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
   ];
 
   const fadeSlide = (dir = "left", distance = 60) => {
@@ -148,7 +147,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.35 }}
             className="relative h-[420px] sm:h-[480px] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
           >
-            <Swiper modules={[Autoplay, EffectFade]} effect="fade" autoplay={{ delay: 2000 }} loop>
+            <Swiper modules={[Autoplay, EffectFade]} effect="fade" className="h-full" autoplay={{ delay: 2000 }} loop>
               {partnerSlides.map((p, i) => (
                 <SwiperSlide key={i}>
                   <div className="relative h-full w-full">

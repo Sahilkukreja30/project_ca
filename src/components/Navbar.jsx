@@ -287,17 +287,17 @@ export default function Navbar() {
             {aboutMobileOpen && (
               <div id="mobile-about" className="mt-2 space-y-1">
                 <Link
-                  href="/team/leadership"
+                  href="/about"
                   className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
                   onClick={() => {
                     setMenuOpen(false);
                     setAboutMobileOpen(false);
                   }}
                 >
-                  Our Team
+                  About Us
                 </Link>
                 <Link
-                  href="/industry/finance"
+                  href="/industry"
                   className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
                   onClick={() => {
                     setMenuOpen(false);
