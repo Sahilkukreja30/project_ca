@@ -68,7 +68,7 @@ export default function ServicesSection() {
           </div>
           <Link
             href="/services"
-            className="text-sm font-semibold text-sky-200 hover:text-white underline underline-offset-4"
+            className="text-sm font-semibold text-sky-200 hover:text-white pb-5 xl:pb-0 md:pb-0 underline underline-offset-4 whitespace-nowrap"
           >
             View all
           </Link>

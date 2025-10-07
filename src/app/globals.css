@@ -4,10 +4,26 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
+/* Smooth the fade layers */
+.swiper,
+.swiper-slide {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+
 .swiper-button-next,
 .swiper-button-prev {
   color: #ffffff !important; /* your teal color */
+  width: 24px !important;       /* reduce default ~44px */
+  height: 24px !important;
+  scale: 0.8; 
 }
+
+/* Ensure only the visible slide is interactive when using effect:'fade' */
+.swiper-slide { pointer-events: none; }
+.swiper-slide-active { pointer-events: auto; }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {

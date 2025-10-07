@@ -96,6 +96,8 @@ export default function HomePage() {
         <Swiper
           modules={[Autoplay, Pagination, Navigation, EffectFade, Keyboard]}
           effect="fade"
+          fadeEffect={{ crossFade: true }}
+          speed={1200}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           navigation
