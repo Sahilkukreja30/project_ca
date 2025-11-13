@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import ServicesSection from "../components/ServiceSection";
-import MissionVision from "../components/Mission";
+
 
 export default function HomePage() {
   // Count-up animation logic
@@ -54,13 +54,13 @@ export default function HomePage() {
   const heroSlides = useMemo(
     () => [
       {
-        src: "/slide1.png",
-        title: "Strong Foundations, Brighter Horizons",
-        subtitle: "Structured Growth for modern businesses",
+        src: "/slide2.png",
+        title: "Welcome to VN Shah & Co.",
+        subtitle: "",
         cta: { label: "Explore Services", href: "/services/audit-assurance" },
       },
       {
-        src: "/slide2.png",
+        src: "/slide1.png",
         title: "Build on Collaboration, Driven by Expertise",
         subtitle: "Together, we create solutions that last.",
         cta: { label: "Direct & International Tax", href: "/services/direct-international-tax" },
@@ -77,9 +77,13 @@ export default function HomePage() {
 
   const partnerSlides = [
     { src: "/hero.png", name: "CA Vishal N Shah", role: "Founder & Partner" },
-    { src: "/hero2.png", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
+    { src: "/hero3.jpeg", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
   ];
-
+  const sliderSlides = [
+    { src: "/background.png", title: "Welcome to Vishal N Shah & Co", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial.", cta: { label: "Get Expert Assistance", href: "/contact" } },
+    {src:"/slide2.png",title:"Empowering Compliance",subtitle:"Proactive, accurate, and timely regulatory guidance that helps you stay compliant with evolving laws while reducing risk and complexity.",cta: { label: "Get Expert Assistance", href: "/contact" }},
+    {src:"/slide1.png",title:"Enabling Growth",subtitle:"Strategic, practical advisory that enhances efficiency, unlocks opportunities, and supports long-term business expansion.",cta: { label: "Get Expert Assistance", href: "/contact" }}
+  ];
   const fadeSlide = (dir = "left", distance = 60) => {
     const x = dir === "left" ? -distance : dir === "right" ? distance : 0;
     const y = dir === "up" ? -distance : dir === "down" ? distance : 0;
@@ -88,55 +92,82 @@ export default function HomePage() {
       show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
     };
   };
+  const [activeIndex, setActiveIndex] = useState(0);
 
+  const slideTitle = {
+    hidden: { y: 28, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.62, ease: [0.22, 1, 0.36, 1] } },
+  };
+  const slideSub = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.62, delay: 0.12, ease: [0.22, 1, 0.36, 1] } },
+  };
+  const slideCta = {
+    hidden: { y: 18, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.62, delay: 0.24, ease: [0.22, 1, 0.36, 1] } },
+  };
   return (
     <main className="bg-white">
       {/* ---- HERO SECTION ---- */}
-      <section className="relative h-[80vh] min-h-[480px] w-full">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation, EffectFade, Keyboard]}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          speed={1200}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          keyboard
-          loop
-          className="h-full"
-        >
-          {heroSlides.map((s, i) => (
+      <section className="relative overflow-hidden">
+      <Swiper
+        modules={[Autoplay, EffectFade, Pagination, Navigation, Keyboard]}
+        effect="fade"
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        loop={true}
+        onSwiper={(sw) => setActiveIndex(sw.realIndex)}            // <- use realIndex on init
+        onSlideChange={(sw) => setActiveIndex(sw.realIndex)}       // <- use realIndex on every slide change
+        className="h-[520px] md:h-[640px]"
+      >
+        {sliderSlides.map((s, i) => {
+          const isActive = activeIndex === i;
+          return (
             <SwiperSlide key={i}>
               <div className="relative h-full w-full">
-                <Image src={s.src} alt={s.title} fill priority={i === 0} className="object-cover" />
-                <div className="absolute inset-0 bg-[#0F2742]/60" />
-                <div className="absolute inset-0 flex items-center justify-start px-6 md:px-10">
-                  <div className="max-w-xl md:max-w-2xl">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight">
+                <Image src={s.src} alt={s.title} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/18 to-transparent" />
+
+                <div className="absolute inset-0 flex items-center px-6 md:px-20">
+                  <div className="max-w-3xl">
+                    <motion.h1
+                      variants={slideTitle}
+                      initial="hidden"
+                      animate={isActive ? "visible" : "hidden"}
+                      className="text-white text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight"
+                    >
                       {s.title}
-                    </h1>
-                    <p className="mt-4 text-base md:text-lg text-slate-100">{s.subtitle}</p>
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <Link
-                        href="/contact"
-                        className="rounded-full border bg-[#1FA3A3] hover:bg-teal-800 border-white/55 px-5 py-3 text-sm font-medium text-white/90"
-                      >
-                        Book a consultation
-                      </Link>
-                      <Link
-                        href={s.cta.href}
-                        className="rounded-full px-5 py-3 bg-white/30 text-sm font-medium border border-white/60 text-white hover:bg-white/10 shadow hover:brightness-95"
-                      >
+                    </motion.h1>
+
+                    <motion.p
+                      variants={slideSub}
+                      initial="hidden"
+                      animate={isActive ? "visible" : "hidden"}
+                      className="mt-4 text-slate-100 text-base md:text-lg max-w-2xl"
+                    >
+                      {s.subtitle}
+                    </motion.p>
+
+                    <motion.div
+                      variants={slideCta}
+                      initial="hidden"
+                      animate={isActive ? "visible" : "hidden"}
+                      className="mt-6 flex gap-3"
+                    >
+                      <Link href={s.cta.href} className="rounded-full bg-[#1FA3A3] px-5 py-3 text-sm font-medium text-white hover:brightness-95">
                         {s.cta.label}
                       </Link>
-                    </div>
+                      <Link href="/contact" className="rounded-full border border-white/30 px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5">
+                        Contact
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+          );
+        })}
+      </Swiper>
+    </section>
 
       {/* ---- ABOUT SECTION ---- */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -147,7 +178,7 @@ export default function HomePage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
-            className="relative h-[420px] sm:h-[480px] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+            className="relative h-[500px] sm:h-[450px] overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
           >
             <Swiper modules={[Autoplay, EffectFade]} effect="fade" className="h-full" autoplay={{ delay: 2000 }} loop>
               {partnerSlides.map((p, i) => (
@@ -166,13 +197,16 @@ export default function HomePage() {
 
           {/* Right: text */}
           <motion.div variants={fadeSlide("right", 80)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
-            <h2 className="text-3xl font-semibold text-[#0F2742]">Founder – CA Vishal N Shah</h2>
-            <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed">
-              CA Vishal N Shah, the founding partner, is an Associate Member of the Institute of Chartered Accountants of India with over a decade of experience spanning industry and professional practice. He specializes in direct taxation and advisory services, with a proven track record in appellate matters, mergers & acquisitions, project financing, and government liaison.
+            <h2 className="text-3xl font-semibold text-[#0F2742]">
+              Practical advice. Dependable execution.
+            </h2>
+            <p className="mt-4 text-slate-700">
+              Established in 2013, our firm supports clients across diverse industries, business sizes and geographies. With a strong foundation in taxation, audit, financial reporting and regulatory advisory, we deliver solutions that are technically sound and commercially relevant.
             </p>
-            <h2 className="mt-8 text-3xl font-semibold text-[#0F2742]">Co-Founder – CA Nishant S Chitalia</h2>
-            <p className="mt-4 text-slate-700 text-sm md:text-base leading-relaxed">
-              CA Nishant S Chitalia, co-founder and partner, brings over 12 years of professional experience in taxation, valuation, trust audits, and consultancy. He is known for delivering practical, timely, and compliance-focused solutions, helping clients navigate complex regulatory frameworks with clarity and confidence.
+            <p className="mt-2 text-slate-700">Our team combines deep subject-matter expertise with disciplined internal processes, ensuring every engagement is executed with precision and accountability. Whether it involves direct tax advisory, statutory audits, FEMA/RBI compliance or transaction support, we focus on providing guidance that is accurate, timely and easy to act upon.</p>
+            <p className="mt-3 text-slate-700">
+              What sets us apart is our senior-led engagement model. Every client receives direct involvement from experienced professionals who understand the complexities of modern business and regulatory landscapes. Through transparent communication and structured workflows, we ensure clarity at every stage.
+              We also collaborate with specialised service partners to provide end-to-end support, helping businesses stay compliant, confident and ready to grow.
             </p>
           </motion.div>
         </div>
@@ -186,8 +220,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---- MISSION & VISION ---- */}
-      <MissionVision />
 
       {/* ---- SERVICES ---- */}
       <ServicesSection />

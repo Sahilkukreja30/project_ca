@@ -87,78 +87,24 @@ export default function Navbar() {
       >
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="grid h-8 w-8 place-items-center rounded-md border border-[#0F2742]/15 bg-white text-xs font-bold text-[#0F2742] shadow-sm">
-            V
+          <div className="grid h-8 w-8 place-items-center rounded-md border border-[#0F2742]/15 bg-white text-sm font-bold text-[#0F2742] shadow-sm">
+            VN
           </div>
-          <span className="text-lg font-semibold tracking-tight text-[#0F2742]">
+          <div className="flex flex-col">
+            <span className="text-xl font-semibold tracking-tight text-[#0F2742]">
             Vishal N Shah &amp; Co
           </span>
+          <span className="text-sm font-semibold tracking-tight text-[#0F2742]">
+            Chartered Accountants
+          </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-1 md:flex">
           <NavItem href="/" active={isActive("/")}>Home</NavItem>
 
-          {/* About dropdown (desktop) */}
-          <div
-            className="relative"
-            ref={aboutRef}
-          >
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setAboutOpen((prev) => !prev);
-              }}
-              className={`group inline-flex items-center rounded-full border px-4 py-2 text-sm transition
-                ${pathname?.startsWith("/about")
-                  ? "border-[#1FA3A3] text-[#0F2742]"
-                  : "border-slate-300 text-slate-700 hover:border-[#1FA3A3] hover:text-[#0F2742]"}
-              `}
-              aria-haspopup="menu"
-              aria-expanded={aboutOpen}
-              aria-controls={aboutMenuId}
-            >
-              About
-              <svg
-                className={`ml-2 h-4 w-4 transition-transform ${aboutOpen ? "rotate-180" : ""}`}
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="pointer-events-none ml-2 h-[2px] w-0 bg-[#1FA3A3] transition-all group-hover:w-4" />
-            </button>
-
-            {aboutOpen && (
-              <div
-                id={aboutMenuId}
-                className="absolute left-0 mt-2 w-48 rounded-md border border-slate-200 bg-white p-1 shadow-lg"
-                role="menu"
-                tabIndex={-1}
-              >
-                <Link
-                  href="/about"
-                  className="block rounded px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
-                  role="menuitem"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/industry"
-                  className="mt-0.5 block rounded px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
-                  role="menuitem"
-                >
-                  Industry
-                </Link>
-              </div>
-            )}
-          </div>
+          <NavItem href="/about" active={isActive("/about")}>About</NavItem>
 
           {/* Services dropdown (desktop) */}
           <div className="relative" ref={dropdownRef}>
@@ -225,14 +171,14 @@ export default function Navbar() {
               </div>
             )}
           </div>
-
+          <NavItem href="/industry" active={isActive("/industry")}>Sectors</NavItem>
           <NavItem href="/contact" active={isActive("/contact")}>Contact</NavItem>
 
           <Link
             href="/contact"
             className="ml-2 rounded-full bg-[#1FA3A3] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#1FA3A3]/40"
           >
-            Book a consultation
+            Get Expert Assistance
           </Link>
         </div>
 
