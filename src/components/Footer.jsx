@@ -65,16 +65,16 @@ export default function Footer() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3">
-                <span className="text-lg font-semibold">{brand.name}</span>
+                <span className="text-[1.5rem] font-semibold">{brand.name}</span>
               </div>
-              <p className="mt-3 text-sm text-white/75 max-w-sm">{brand.blurb}</p>
+              <p className="mt-3 text-[0.95rem] text-white/75 max-w-sm">{brand.blurb}</p>
 
               
             </div>
 
             {/* Quick Links */}
             <nav>
-              <h4 className="text-sm font-semibold">Quick Links</h4>
+              <h4 className="text-lg font-semibold">Quick Links</h4>
               <ul className="mt-4 space-y-2">
                 {quickLinks.map((item) => (
                   <li key={item.href}>
@@ -88,7 +88,7 @@ export default function Footer() {
 
             {/* Services */}
             <nav>
-              <h4 className="text-sm font-semibold">Services</h4>
+              <h4 className="text-lg font-semibold">Services</h4>
               <ul className="mt-4 space-y-2">
                 {services.map((svc) => (
                   <li key={svc.href}>
@@ -102,7 +102,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="text-sm font-semibold">Our Offices</h4>
+              <h4 className="text-lg font-semibold">Our Offices</h4>
               <div className="mt-4 space-y-4 text-sm">
                 <div className="flex items-start gap-2 text-white/90">
                   <MapPin className="h-4 w-4 mt-0.5" />

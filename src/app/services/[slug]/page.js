@@ -6,26 +6,28 @@ const services = {
   "direct-international-tax": {
     title: "Direct & International Tax",
     intro:
-      "Our Direct and International Tax practice focuses on helping businesses and individuals navigate India’s complex and ever-changing tax landscape. We provide comprehensive tax planning, compliance, and advisory services aimed at minimizing risks and optimizing tax efficiency. Our services include income-tax return preparation, assessments, and representation before tax authorities and appellate bodies. For multinational clients, we specialize in cross-border tax structuring, transfer pricing documentation, and treaty analysis to ensure compliance with international standards. With years of experience in dealing with intricate taxation matters, we offer strategic insights to help clients achieve tax certainty while aligning with their long-term business goals.",
+      "Our Direct & International Tax practice helps businesses, individuals, and cross-border entities navigate India’s evolving tax environment with clarity and precision. We assist clients in planning structures that are compliant, commercially sound, and tax-efficient. From routine income-tax filings to complex international arrangements, we provide end-to-end support across documentation, assessments, audits, investigations, and appellate matters. Our team ensures accurate tax computations, robust compliance systems, and seamless coordination with revenue authorities. For global and NRI clients, we advise on residency, foreign income disclosures, treaty relief, transfer pricing, and cross-border reporting. With a blend of technical expertise and practical judgement, we help clients manage risk, optimise tax outcomes, and achieve long-term financial certainty.",
     whatWeDo: [
-      "Tax planning for domestic and cross-border structures",
-      "Return preparation & filings for companies, LLPs, firms and HNIs",
-      "Assessments, representations and appellate support",
-      "Advance Tax computation & planning; quarterly installments",
-      "TDS/TCS compliance reviews, due dates tracking & return filing",
-      "Notices: reply drafting, documentation, and representation before authorities",
-      "Transfer Pricing coordination (Master/Local files, benchmarking) & litigation support",
-      "DTAA interpretation, foreign tax credit & global income disclosures for NRIs",
+      "Tax planning for domestic, cross-border, corporate, and individual structures",
+      "Return filing for companies, LLPs, firms, trusts, NRIs, and HNIs",
+      "Drafting responses, documentation, and representation for assessments and investigations",
+      "Transfer Pricing documentation, benchmarking and litigation support",
+      "Advance Tax and TDS review, optimisation, and compliance monitoring",
+      "Handling departmental notices, inquiries, reassessments, and audits",
+      "DTAA interpretation, treaty relief, and foreign tax credit advisory",
+      "NRI tax planning, global income disclosures, and capital gains support",
+      "Tax diagnostic reviews and compliance health checks"
     ],
     howWeEngage: [
-      "Scoping call & document list",
-      "Review & tax position note",
-      "Compliance & filing",
-      "Assessment/appeal representation (as applicable)",
+      "Scoping discussion & information request",
+      "Tax position review & planning memo",
+      "Execution of filings, documentation & advisory",
+      "Representation, closure & compliance handover"
     ],
     faqs: [
-      { q: "Can you represent us before tax authorities?", a: "Yes, we assist with assessments, notices and appellate matters, preparing submissions and representation." },
-      { q: "Do you handle HNI returns?", a: "Yes, including capital gains, ESOPs, foreign income and disclosure requirements." },
+      { q: "Do you represent clients before tax authorities?", a: "Yes. We assist with assessments, audits, notices, reassessments, and appellate matters with full documentation and representation." },
+      { q: "Do you manage NRI taxation?", a: "Yes. We handle NRI filings, foreign income disclosures, capital gains, DTAA relief, and repatriation-related tax requirements." },
+      { q: "Can you guide on cross-border tax structures?", a: "Yes, we advise on inbound/outbound investment, treaty interpretation, and compliance requirements." }
     ],
     src: "/service1.png"
   },
@@ -33,19 +35,27 @@ const services = {
   "gst-indirect-tax": {
     title: "GST & Indirect Tax",
     intro:
-      "The introduction of the Goods and Services Tax (GST) has transformed India’s indirect tax regime, creating both challenges and opportunities for businesses. Our GST & Indirect Tax division offers end-to-end support — from registration and classification to compliance, audits, and advisory. We assist clients in interpreting GST laws, optimizing input tax credits, and managing place-of-supply complexities for multi-state operations. Our specialists also provide in-depth guidance on refunds, reconciliations (2B/3B vs. books), and departmental representations. Whether you’re setting up operations, facing an audit, or dealing with cross-border supply chains, we help ensure that your indirect tax positions are compliant, efficient, and strategically sound.",
+      "Our GST & Indirect Tax practice supports businesses in managing India’s dynamic indirect tax framework with accuracy and confidence. We provide end-to-end assistance covering registration, classification, advisory, filings, reconciliations, audits, and departmental queries. Our team ensures correct interpretation of GST laws, maximisation of input credit, and timely preparation of monthly, quarterly, and annual returns. We assist clients in handling scrutiny notices, refund applications, export-related benefits, and multi-state compliance. With deep experience across industries, we help organisations build efficient tax processes, reduce exposure, and maintain ongoing compliance. Our goal is to simplify indirect taxation while enabling operational continuity and financial discipline.",
     whatWeDo: [
-      "GST registration, migration and advisory on tax positions",
-      "Monthly/quarterly returns and annual filings",
-      "Reconciliations (GSTR-2B, 3B vs books) and input-credit optimisation",
-      "GST audits (incl. 9/9C), departmental liaison and end-to-end refunds",
-      "Notices & scrutiny: reply drafting, documentation and representation",
+      "GST registration, classification analysis, and advisory on tax positions",
+      "Monthly, quarterly and annual return filings (GSTR-1, 3B, 9/9C)",
+      "Input tax credit review, optimisation, and 2B/3B vs. books reconciliations",
+      "GST audits, departmental liaison, and representation",
+      "Reply drafting for notices, scrutiny, and inquiries",
+      "Refund applications for exports, inverted duty, and excess balances",
       "Indirect tax health checks and risk reviews",
+      "Place of supply advisory for multi-state and cross-border operations",
+      "Support for e-invoicing, e-way bill and compliance automation"
     ],
-    howWeEngage: ["Onboarding & data design", "Recurring compliances/MIS", "Year-end closures & audits", "Departmental liaison/refunds (as needed)"],
+    howWeEngage: [
+      "Understanding business model & compliance needs",
+      "Structuring tax positions & compliance calendar",
+      "Execution of monthly/annual filings & reconciliations",
+      "Departmental representation & ongoing advisory"
+    ],
     faqs: [
-      { q: "Can you manage monthly filings?", a: "Yes, we manage returns, payment challans and reconciliations end-to-end." },
-      { q: "Do you assist with refunds?", a: "Yes, from documentation to application and follow-through." },
+      { q: "Do you handle monthly GST filings?", a: "Yes. We prepare and file all periodic GST returns with timely reconciliations and payment support." },
+      { q: "Can you assist with GST refunds?", a: "Yes. We manage end-to-end refund documentation, filing, and department follow-ups." }
     ],
     src: "/service1.png"
   },
@@ -53,20 +63,27 @@ const services = {
   "audit-assurance": {
     title: "Audit & Assurance",
     intro:
-      "In a world where transparency and governance are paramount, our Audit & Assurance services help build stakeholder confidence through integrity and precision. We conduct statutory audits, internal audits, management audits, and special purpose reviews in line with professional standards and regulatory requirements. Our audit approach goes beyond compliance — we focus on identifying process improvements, strengthening internal controls, and enhancing operational efficiency. Over the years, we’ve worked with clients across sectors, including manufacturing, trading, financial services, and trusts, delivering reliable insights that support sustainable growth. Our commitment to quality assurance ensures that every audit engagement adds tangible value to your organization.",
+      "Our Audit & Assurance practice delivers high-quality, objective, and value-focused audits that enhance stakeholder confidence. We conduct statutory audits, internal audits, tax audits, management reviews, trust and NGO audits, and special purpose examinations. Our approach goes beyond compliance — we assess internal controls, financial reporting accuracy, process efficiency, and risk areas impacting performance. We combine strong technical standards with practical insights, helping organisations improve governance, strengthen systems, and maintain transparency. With experience across industries, we tailor each audit to the client’s size, complexity, and regulatory requirements, ensuring a thorough yet efficient engagement.",
     whatWeDo: [
-      "Statutory audits under Companies Act and other statutes",
-      "Internal audits and process reviews",
-      "Tax Audit (Sec 44AB) and support with assessments",
-      "GST Audit (as applicable) and compliance reviews",
-      "Trust/NGO audits, concurrent/special purpose audits",
-      "Stock & inventory verification, reporting and controls", +    "Forensic procedures & fraud reviews; risk-based audit planning",
-      "IFC/ICFR testing and implementation",
+      "Statutory audits under the Companies Act and other laws",
+      "Internal audits, process audits, and operational reviews",
+      "Tax Audit under Section 44AB with documentation review",
+      "Trust, NGO, society, and Section 8 company audits",
+      "GST audit support and compliance reviews",
+      "Inventory verification and stock audit procedures",
+      "Internal control evaluation, IFC/ICFR testing and implementation support",
+      "Special audits, forensic procedures and fraud risk reviews",
+      "Management reporting and improvement recommendations"
     ],
-    howWeEngage: ["Risk assessment & audit plan", "Fieldwork & walkthroughs", "Reporting & management responses", "Follow-up reviews"],
+    howWeEngage: [
+      "Risk assessment & audit planning",
+      "Fieldwork, walkthroughs & evidence gathering",
+      "Drafting reports & discussing observations",
+      "Finalisation, submission & post-audit support"
+    ],
     faqs: [
-      { q: "Do you do trust audits?", a: "Yes, including societies and section-8 entities." },
-      { q: "Can you review controls (ICFR)?", a: "Yes, including design, testing and remediation plans." },
+      { q: "Do you conduct audits for NGOs and trusts?", a: "Yes. We audit trusts, societies, Section 8 entities, and charitable institutions." },
+      { q: "Can you review internal controls?", a: "Yes, including design evaluation, implementation, testing, and improvement recommendations." }
     ],
     src: "/service4.png"
   },
@@ -74,18 +91,27 @@ const services = {
   "accounting-payroll": {
     title: "Accounting & Payroll",
     intro:
-      "Accurate accounting is the foundation of informed decision-making. Our Accounting & Payroll team provides reliable bookkeeping, financial reporting, and payroll processing services to businesses of all sizes. We manage everything from day-to-day accounting entries and reconciliations to preparation of MIS reports, ensuring your financial data remains accurate, timely, and compliant with statutory requirements. Our payroll solutions cover salary computation, TDS, PF/ESI management, and payslip generation. We also design customized accounting systems and internal processes that scale as your business grows. With our support, clients gain greater visibility into performance metrics while freeing up time to focus on strategic business priorities.",
+      "Our Accounting & Payroll practice provides reliable, structured, and technology-driven financial management support for businesses of all sizes. We manage day-to-day bookkeeping, reconciliations, MIS reporting, payroll processing, statutory deductions, and month-end closures. Our team creates accounting systems aligned with your operational needs and ensures accurate, compliant financial data for decision-making. We also act as virtual CFOs, offering budgeting, forecasting, and financial oversight to help growing organisations maintain strong controls. With clear processes and timely deliverables, we help businesses focus on growth while we handle their financial backbone.",
     whatWeDo: [
-      "Day-to-day bookkeeping and reconciliations",
-      "Payroll processing, TDS/ESI/EPF and payslips",
-      "Monthly closes and management reports (MIS) with KPI dashboards",
-      "AR/AP ageing, vendor management and controls",
-      "Virtual CFO/controllership oversight: budgeting, cashflow & board packs",
+      "Daily accounting, bookkeeping, and ledger maintenance",
+      "Bank, vendor, and customer reconciliations",
+      "Monthly management reports, MIS dashboards, and KPIs",
+      "Payroll processing with TDS, PF, ESI and statutory compliance",
+      "Accounts receivable and payable management",
+      "Budgeting, forecasting and cash flow planning",
+      "Setting up accounting systems, COA, and SOPs",
+      "Controllership and virtual CFO oversight",
+      "Audit support and year-end closure"
     ],
-    howWeEngage: ["Tooling & chart-of-accounts setup", "Steady-state books & payroll", "Monthly closes & MIS", "Audit & compliance hand-off"],
+    howWeEngage: [
+      "Understanding systems, tools & reporting needs",
+      "Setting up accounting framework & workflows",
+      "Monthly steady-state bookkeeping & payroll",
+      "MIS delivery, reviews & audit coordination"
+    ],
     faqs: [
-      { q: "Can you work on our software?", a: "Yes, we work with common ERPs and accounting tools." },
-      { q: "Do you provide on-site support?", a: "Remote-first with on-site visits where needed." },
+      { q: "Can you work with our existing accounting software?", a: "Yes. We work with major ERPs and cloud-based accounting platforms." },
+      { q: "Do you provide on-site support?", a: "Yes. While we operate primarily remote, onsite visits can be arranged when required." }
     ],
     src: "/service2.png"
   },
@@ -93,19 +119,27 @@ const services = {
   "fema-rbi": {
     title: "FEMA & RBI Compliance",
     intro:
-      "Foreign investments, external borrowings, and cross-border transactions require careful navigation of the FEMA and RBI regulatory framework. Our dedicated FEMA & RBI Compliance team assists clients in managing inbound and outbound capital flows, ensuring every transaction complies with Indian exchange control laws. We handle filings such as FC-GPR, FC-TRS, FLA, and ECB returns, while also preparing compounding applications and liaising with regulators when needed. For clients expanding internationally or establishing liaison or branch offices in India, we provide full-cycle support — from advisory to documentation. Our goal is to help you achieve smooth regulatory approvals while maintaining total transparency and compliance.",
+      "Our FEMA & RBI Compliance practice assists clients with inbound and outbound investments, foreign exchange regulations, cross-border transactions, and regulatory filings. We support businesses and individuals in understanding permissible routes for investment, pricing guidelines, reporting requirements, repatriation rules, and capital account transactions. Our team assists in filings such as FC-GPR, FC-TRS, FLA, ECB returns, compounding applications, and liaison/branch office approvals. With careful interpretation of FEMA provisions and coordination with banks and regulators, we ensure compliance while enabling smooth capital flows and cross-border structuring.",
     whatWeDo: [
-      "FEMA advisory for FDI, ODI and ECBs",
-      "RBI filings (FC-GPR, FC-TRS, FLA and others)",
-      "Setting up liaison/branch/project offices",
-      "Compounding applications & regularisations; demand/refund coordination",
-      "Repatriation planning with tax/DTAA alignment",
-      "Share transfers, pricing and reporting",
+      "Advisory on FDI, ODI, ECBs, share transfers and capital account transactions",
+      "Preparation and filing of FC-GPR, FC-TRS, FLA, and other RBI returns",
+      "Setting up liaison, branch and project offices",
+      "Compounding applications, regularisation of past non-compliance",
+      "Entity restructuring, pricing, valuation and reporting",
+      "Repatriation planning aligned with tax and DTAA",
+      "Bank coordination for filings, remittances and approvals",
+      "FEMA due-diligence and transaction reviews",
+      "Documentation for cross-border investments"
     ],
-    howWeEngage: ["Feasibility & route analysis", "Documentation & filings", "Regulatory liaison", "Post-approval compliance calendar"],
+    howWeEngage: [
+      "Route feasibility & regulatory assessment",
+      "Documentation, pricing and structuring",
+      "Filing submissions & regulator/bank coordination",
+      "Compliance calendar & ongoing advisory"
+    ],
     faqs: [
-      { q: "Can you help with LO/BO setup?", a: "Yes, from application to ongoing compliances." },
-      { q: "Do you handle compounding?", a: "Yes, including preparation and submissions." },
+      { q: "Do you help with compounding cases?", a: "Yes. We prepare applications, documentation, and liaise with the RBI during the process." },
+      { q: "Can you assist with setting up a liaison or branch office?", a: "Yes. We handle approvals, filings, documentation, and ongoing compliance." }
     ],
     src: "/service3.png"
   },
@@ -113,21 +147,27 @@ const services = {
   "companies-act": {
     title: "Companies Act & Secretarial",
     intro:
-      "Compliance under the Companies Act, 2013 demands precision, timeliness, and expert understanding of corporate law. Our Secretarial team offers a complete suite of services — from company incorporation and LLP registration to routine filings, share transfers, and annual returns. We ensure proper documentation of board and shareholder meetings, maintain statutory registers, and assist in event-based compliance such as change of directors, capital restructuring, and closure proceedings. For growing organizations, we act as your outsourced Company Secretary function, helping you meet every ROC and MCA requirement with accuracy. Our proactive approach ensures governance standards are met without disrupting business continuity.",
+      "Our Companies Act & Secretarial practice ensures businesses remain compliant with all statutory, procedural, and governance requirements under the Companies Act, 2013. We assist with company/LLP incorporation, share allotments, annual filings, board documentation, statutory registers, director changes, and event-based compliances. Our team ensures accuracy and timeliness in all ROC/MCA submissions and helps organisations implement strong corporate governance practices. We also support NGO/Section 8 registrations, CSR filings, and other specialised corporate processes. With structured documentation and proactive compliance tracking, we help businesses focus on growth while we manage their secretarial responsibilities.",
     whatWeDo: [
-      "Company/LLP incorporation and conversions; Partnership setup",
-      "Section 8 (NGO) registration and governance support",
-      "Director/KMP changes, share issues/transfers",
-      "Annual returns, event-based ROC filings",
-      "Board support — notices, minutes and registers",
-      "IEC (Import-Export Code) registration and post-registration guidance",
-      "CSR registration, 12A/80G assistance & NGO Darpan/FCRA coordination",
-      "Dormant/strike-off processes",
+      "Company/LLP incorporation, conversion and restructuring",
+      "Annual filings, ROC returns and event-based compliances",
+      "Director and shareholder changes, share allotment & transfers",
+      "Board meeting notices, minutes and statutory registers",
+      "CSR registration, 12A/80G and NGO Darpan/FCRA support",
+      "Partnership and Section 8 entity setup",
+      "IEC registration and post-registration compliance",
+      "Strike-off, dormant status applications and closures",
+      "Secretarial audits and corporate governance reviews"
     ],
-    howWeEngage: ["Entity scoping & name checks", "Incorporation & PAN/TAN", "Compliance calendar setup", "Ongoing board/ROC support"],
+    howWeEngage: [
+      "Understanding structure & compliance requirements",
+      "Preparing documentation & drafting resolutions",
+      "Filing with MCA/ROC & maintaining registers",
+      "Providing ongoing corporate advisory"
+    ],
     faqs: [
-      { q: "Do you assist with ESOP filings?", a: "Yes, including board/shareholder actions and forms." },
-      { q: "Can you be our compliance partner?", a: "Yes, we manage an annual compliance calendar." },
+      { q: "Do you handle annual ROC filings?", a: "Yes. We manage all annual, event-based and compliance-related MCA filings." },
+      { q: "Can you support non-profit and Section 8 registrations?", a: "Yes. We assist with setup, compliance, 12A/80G and CSR registrations." }
     ],
     src: "/service3.png"
   },
@@ -135,19 +175,27 @@ const services = {
   "valuation-transactions": {
     title: "Valuation & Transactions",
     intro:
-      "Sound valuation underpins every strategic business decision — whether for mergers, acquisitions, fundraising, or restructuring. Our Valuation & Transactions practice delivers independent, well-supported valuation reports tailored to each client’s regulatory and commercial needs. We perform business and equity valuations, financial modeling, and due diligence for both buy-side and sell-side mandates. By combining technical expertise with sectoral insight, we help clients quantify value, assess risk, and negotiate confidently. We also support transaction documentation, data room preparation, and post-deal integration. Our focus is to help you unlock true value from every business opportunity with a clear, data-backed perspective.",
+      "Our Valuation & Transactions practice supports clients in making informed decisions during fundraising, restructuring, mergers, acquisitions, and strategic business moves. We provide independent and defensible valuation reports in line with regulatory requirements and global best practices. Our team conducts financial modelling, scenario analysis, feasibility studies, and buy-side/sell-side due diligence. We also assist in preparing CMA data, project reports, data rooms, transaction documentation, and post-deal integration. With strong analytical expertise and industry understanding, we bring clarity and confidence to complex business decisions.",
     whatWeDo: [
-      "Business & securities valuation for deals and regulatory needs",
-      "Financial models and scenario planning",
-      "Buy-side/sell-side due diligence & feasibility studies",
-      "CMA data & Project Reports for banks/investors",
-      "Data room prep, Q&A, SPA support; JV structuring",
-      "Post-deal integration and reporting",
+      "Business, equity, and securities valuation for regulatory and deal purposes",
+      "Financial modelling, projections, and scenario planning",
+      "Buy-side and sell-side due diligence",
+      "CMA data preparation and project reports for banks/investors",
+      "Transaction structuring and feasibility studies",
+      "Data room organisation, Q&A support and SPA assistance",
+      "Valuation compliance and documentation for regulators",
+      "JV structuring, negotiation support & term sheet reviews",
+      "Post-deal integration support"
     ],
-    howWeEngage: ["Scope & data request", "Analysis & modelling", "Review meetings", "Reports & hand-off"],
+    howWeEngage: [
+      "Scope alignment & data request",
+      "Analysis, modelling & review meetings",
+      "Draft & final report issuance",
+      "Deal support & documentation handover"
+    ],
     faqs: [
-      { q: "Can you coordinate with bankers/lawyers?", a: "Yes, we collaborate with the wider deal team." },
-      { q: "Do you issue valuation reports?", a: "Yes, as per the applicable standards/regulations." },
+      { q: "Do you issue valuation reports as per regulatory standards?", a: "Yes. We issue valuation reports compliant with applicable regulations and standards." },
+      { q: "Do you help with deal documentation?", a: "Yes. We assist with data room preparation, Q&A and SPA-related support." }
     ],
     src: "/service4.png"
   },
@@ -155,18 +203,26 @@ const services = {
   "nri-foreign-desk": {
     title: "NRI & Foreign Desk",
     intro:
-      "Expanding across borders requires reliable local expertise. Our NRI & Foreign Desk offers specialized advisory for non-resident individuals and overseas businesses operating in or from India. We assist with entity setup, taxation, FEMA compliance, repatriation planning, and DTAA interpretations. From obtaining PAN, TAN, or GST registration to managing regular tax filings and certifications, we provide end-to-end execution with confidentiality and precision. Our team also coordinates with overseas advisors to align Indian compliances with global obligations. Whether you’re investing in India, managing foreign income, or seeking repatriation solutions, we ensure your cross-border journey is smooth and compliant.",
+      "Our NRI & Foreign Desk provides specialised support for non-resident individuals and foreign entities dealing with Indian tax, regulatory, and compliance matters. We assist with entity setup, registrations, PAN/Aadhaar, FEMA compliance, repatriation, DTAA interpretation, and cross-border taxation. Our team ensures accurate filings, foreign income disclosures, investment compliance, and coordination with banks and authorities. Whether you are investing in India, earning overseas income, or seeking clarity on residency, we offer structured guidance and reliable execution.",
     whatWeDo: [
-      "Entity setup and registrations",
-      "NRI taxation, DTAA positions and global income disclosures",
-      "Banking/KYC, PAN/Aadhaar and FEMA touchpoints",
-      "Repatriation planning, certifications & FEMA compliance",
-      "Coordination with overseas advisors",
+      "NRI taxation, residency analysis and global income disclosures",
+      "Advisory on investments, capital gains and DTAA interpretation",
+      "PAN, Aadhaar, TAN, GST and entity registration support",
+      "FEMA compliance, repatriation planning and certifications",
+      "Bank coordination for KYC, remittances and filings",
+      "Support for foreign companies setting up in India",
+      "Cross-border compliance reviews",
+      "Documentation for investment and regulatory filings"
     ],
-    howWeEngage: ["Discovery & route selection", "Registrations & banking", "Tax & FEMA compliances", "Ongoing advisory"],
+    howWeEngage: [
+      "Understanding residency, income & asset profile",
+      "Structuring positions & documentation planning",
+      "Execution of filings, certifications & compliance",
+      "Ongoing advisory & regulatory coordination"
+    ],
     faqs: [
-      { q: "Do you advise on DTAA?", a: "Yes, including residency, PE and credit mechanisms." },
-      { q: "Can you help with repatriation?", a: "Yes, with the certifications and filings required." },
+      { q: "Do you assist with DTAA interpretation?", a: "Yes. We guide on residency, PE, tax credit mechanisms and treaty benefits." },
+      { q: "Can you help with repatriation?", a: "Yes. We advise on repatriation rules and handle required certifications and filings." }
     ],
     src: "/service4.png"
   },
@@ -174,21 +230,30 @@ const services = {
   "startups-msme": {
     title: "Startups & MSME",
     intro:
-      "Entrepreneurs need agility — and clarity. Our Startups & MSME vertical provides a one-stop solution for early-stage and growing businesses seeking robust financial, tax, and compliance support. We help with incorporation, accounting systems, and statutory registrations (DPIIT, MSME, GST, PF, ESIC, etc.), along with tax planning and due diligence for funding rounds. Our team also assists in preparing investor-ready financials, forecasts, and valuations. Beyond compliance, we offer strategic advice on incentive schemes, cash flow management, and regulatory submissions. With our hands-on support, founders can focus on scaling their vision while we handle the financial and compliance backbone.",
+      "Our Startups & MSME practice is designed to help early-stage and growing businesses build a strong financial, regulatory, and operational foundation. We support founders with incorporation, registrations, tax planning, accounting systems, payroll, investor-ready financials, and compliance management. From DPIIT/MSME registrations to fundraising due diligence, our team ensures that young companies are structured correctly and compliant from day one. We also assist in preparing projections, valuations, and reports required during funding rounds or bank interactions. With hands-on support and founder-friendly execution, we enable startups to focus on scaling while we handle the financial and compliance backbone.",
     whatWeDo: [
-      "Entity setup and founder agreements coordination",
-      "Accounting stack, payroll and dashboards",
-      "Startup India, DPIIT and MSME registrations",
-      "Grant/benefit applications and certifications; bank loan assistance",
-      "Investor diligence readiness",
+      "Company/LLP incorporation and founders’ agreement coordination",
+      "Startup India/DPIIT and MSME registration assistance",
+      "Accounting stack setup, payroll and dashboards",
+      "Monthly closes, statutory filings and compliance calendar",
+      "Investor-ready financials, forecasts and projections",
+      "Support for funding documentation and investor diligence",
+      "Advisory on tax incentives, schemes and grants",
+      "Loan application support, CMA data and bank submissions",
+      "Compliance migration and system re-alignment"
     ],
-    howWeEngage: ["Kick-off & stack setup", "Monthly closes & compliances", "Quarterly reviews", "Round-readiness support"],
+    howWeEngage: [
+      "Kick-off meeting & compliance roadmap",
+      "Stack setup, onboarding & registrations",
+      "Monthly accounting, payroll & reviews",
+      "Diligence support & growth advisory"
+    ],
     faqs: [
-      { q: "Do you help with DPIIT?", a: "Yes, including documentation and application." },
-      { q: "What if we switch tools?", a: "We migrate data and keep the compliance calendar intact." },
+      { q: "Do you help with DPIIT recognition?", a: "Yes. We manage eligibility checks, documentation and application filing." },
+      { q: "Do you prepare investor-ready reports?", a: "Yes. We prepare financials, projections, pitch data and assist with diligence queries." }
     ],
     src: "/service4.png"
-  },
+  }
 };
 
 export function generateMetadata({ params }) {
@@ -206,37 +271,39 @@ export default function ServiceDetailPage({ params }) {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-56 sm:h-64 lg:h-80 w-full">
-        <Image
-          src={s.src}
-          alt={`${s.title} banner`}
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 flex items-center bg-[#0F2742]/70">
-          <div className="flex flex-col gap-3 sm:gap-4 pl-4 sm:pl-8 lg:pl-12">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-white">
-              {s.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-              <Link href="/" className="text-white text-sm sm:text-base hover:text-teal-400">Home</Link>
-              <span className="text-white text-xs sm:text-sm">{">>"}</span>
-              <Link href="/service" className="text-white text-sm sm:text-base hover:text-teal-400">Service</Link>
-              <span className="text-white text-xs sm:text-sm">{">>"}</span>
-              <span className="text-white text-sm sm:text-base">{s.title}</span>
+      <section className="relative">
+        <div className="h-[480px] w-full">
+          <Image
+            src={s.src}
+            alt={`${s.title} banner`}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 flex items-center bg-[#0F2742]/70">
+            <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
+              <h1 className="mx-auto max-w-7xl text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+                {s.title}
+              </h1>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                <Link href="/" className="text-white text-sm sm:text-base hover:text-teal-400">Home</Link>
+                <span className="text-white text-xs mt-0.5 sm:text-sm">{">>"}</span>
+                <Link href="/service" className="text-white text-sm sm:text-base hover:text-teal-400">Service</Link>
+                <span className="text-white text-xs mt-0.5 sm:text-sm">{">>"}</span>
+                <span className="text-white text-sm sm:text-base">{s.title}</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Body */}
-      <section className="mx-auto max-w-6xl py-8 sm:py-10 lg:py-12 px-4 sm:px-6">
+      <section className="mx-auto max-w-7xl py-8 sm:py-10 lg:py-12 px-4 sm:px-6">
         {/* Intro */}
-        <section className="text-center max-w-3xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">{s.title}</h1>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-slate-700">
+        <section className="mx-auto max-w-7xl ">
+          <h1 className="text-2xl sm:text-3xl text-center lg:text-4xl font-bold">{s.title}</h1>
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-justify text-slate-700">
             {s.intro}
           </p>
         </section>
@@ -353,39 +420,10 @@ export default function ServiceDetailPage({ params }) {
                   Get a quick, actionable view on your tax or compliance question.
                   We’ll review your facts and respond with a practical path forward.
                 </p>
-
-                {/* value bullets */}
-                <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
-                    30-min discovery call
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
-                    Clear next steps
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="inline-block h-2 w-2 rounded-full bg-teal-300" />
-                    Confidential & precise
-                  </li>
-                </ul>
               </div>
 
               {/* actions */}
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 md:items-center">
-                <a
-                  href="/contact"
-                  className="
-            inline-flex items-center justify-center rounded-full
-            bg-white text-[#0F2742]
-            px-5 py-2.5 text-sm sm:text-base font-semibold
-            hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/60
-          "
-                  aria-label="Book a consultation"
-                >
-                  Book a consultation
-                </a>
-
                 <a
                   href="mailto:office@vnsca.in"
                   className="

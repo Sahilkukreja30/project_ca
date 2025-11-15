@@ -35,8 +35,8 @@ export default function IndustryPage() {
           priority
         />
         <div className="absolute inset-0 flex items-center bg-[#0F2742]/70">
-          <div className="flex flex-col gap-2 pl-4 sm:pl-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+          <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
+            <h1 className="mx-auto max-w-7xl text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
               Industries
             </h1>
             <div className="flex flex-wrap items-center gap-1 sm:gap-2">

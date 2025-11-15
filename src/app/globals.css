@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,6 +13,21 @@
   transform: translateZ(0);
 }
 
+
+
+
+:root {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-merriweather);
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
 
 .swiper-button-next,
 .swiper-button-prev {

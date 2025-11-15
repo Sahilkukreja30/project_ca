@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+
 /* ---------- Inline SVG Icons & Badge ---------- */
 function IconBadge({ children, color = "#1FA3A3", className = "" }) {
     return (
@@ -91,7 +92,7 @@ export default function Contact() {
                     priority
                 />
                 <div className="absolute inset-0 flex items-center pl-6 bg-[#0F2742]/70">
-                    <div className="flex flex-col gap-2">
+                    <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
                         <h1 className="text-5xl font-semibold text-white">Contact Us</h1>
                     <div className="flex gap-2">
                         <Link href={"/"} className="text-white text-lg hover:text-teal-400">Home</Link>
@@ -140,7 +141,7 @@ export default function Contact() {
                             <IconMail className="h-8 w-8 text-white" />
                         </IconBadge>
                         <h3 className="mt-5 text-xl font-semibold text-[#0F2742]">Email Address</h3>
-                        <p className="mt-4 text-sm text-slate-600">
+                        <p className="mt-4 text-lg text-slate-600">
                             <a href="mailto:office@vnsco.in" className="font-medium text-[#1FA3A3] underline hover:text-[#0F2742]">
                                 office@vnsco.in
                             </a>
@@ -150,10 +151,10 @@ export default function Contact() {
                             <IconPhone className="h-8 w-8 text-white" />
                         </IconBadge>
                         <h3 className="mt-5 text-xl font-semibold text-[#0F2742]">Phone Number</h3>
-                        <p className="mt-4 text-sm text-slate-600">
-                            <a href="tel:+919833843720" className="font-medium text-[#1FA3A3] underline hover:text-[#0F2742]">
-                                +91-9833843720
-                            </a>
+                        <p className="mt-4 text-lg text-slate-600">
+                            <span className="font-medium text-[#1FA3A3] underline hover:text-[#0F2742]">
+                                +91-8956668555
+                            </span>
                         </p>
                     </article>
                 </div>

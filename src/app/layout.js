@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter, Merriweather } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SmoothScroller from "../components/SmoothScroll";
@@ -10,6 +11,16 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  variable: "--font-merriweather",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-inter",
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -22,7 +33,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

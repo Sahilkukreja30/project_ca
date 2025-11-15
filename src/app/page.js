@@ -10,70 +10,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import ServicesSection from "../components/ServiceSection";
+import StatsSection from "@/components/StatsStrip";
 
 
 export default function HomePage() {
-  // Count-up animation logic
-  useEffect(() => {
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-    const animate = (el) => {
-      const target = parseInt(el.getAttribute("data-countto"), 10) || 0;
-      const duration = parseInt(el.getAttribute("data-duration"), 10) || 1500;
-      const start = performance.now();
-      const from = 0;
-
-      function frame(now) {
-        const p = Math.min(1, (now - start) / duration);
-        const eased = easeOutCubic(p);
-        const val = Math.round(from + (target - from) * eased);
-        el.textContent = val.toLocaleString();
-        if (p < 1) requestAnimationFrame(frame);
-      }
-
-      requestAnimationFrame(frame);
-    };
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && !e.target.dataset.counted) {
-            e.target.dataset.counted = "1";
-            animate(e.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    document.querySelectorAll("[data-counter]").forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
-  // Hero slides
-  const heroSlides = useMemo(
-    () => [
-      {
-        src: "/slide2.png",
-        title: "Welcome to VN Shah & Co.",
-        subtitle: "",
-        cta: { label: "Explore Services", href: "/services/audit-assurance" },
-      },
-      {
-        src: "/slide1.png",
-        title: "Build on Collaboration, Driven by Expertise",
-        subtitle: "Together, we create solutions that last.",
-        cta: { label: "Direct & International Tax", href: "/services/direct-international-tax" },
-      },
-      {
-        src: "/slide3.png",
-        title: "Unlocking New Possibilities",
-        subtitle: "From challenges to opportunities",
-        cta: { label: "Regulatory & FEMA/FDI", href: "/services/fema-rbi" },
-      },
-    ],
-    []
-  );
 
   const partnerSlides = [
     { src: "/hero.png", name: "CA Vishal N Shah", role: "Founder & Partner" },
@@ -127,8 +67,8 @@ export default function HomePage() {
                 <Image src={s.src} alt={s.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/18 to-transparent" />
 
-                <div className="absolute inset-0 flex items-center px-6 md:px-20">
-                  <div className="max-w-3xl">
+                <div className="absolute inset-0 mx-auto max-w-7xl flex items-center px-6 md:px-20">
+                  <div className="">
                     <motion.h1
                       variants={slideTitle}
                       initial="hidden"
@@ -170,7 +110,7 @@ export default function HomePage() {
     </section>
 
       {/* ---- ABOUT SECTION ---- */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         <div className="grid gap-16 lg:gap-24 md:grid-cols-2">
           {/* Left: Swiper */}
           <motion.div
@@ -197,28 +137,19 @@ export default function HomePage() {
 
           {/* Right: text */}
           <motion.div variants={fadeSlide("right", 80)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
-            <h2 className="text-3xl font-semibold text-[#0F2742]">
+            <h2 className="text-[2rem] font-semibold text-[#0F2742] tracking-wide">
               Practical advice. Dependable execution.
             </h2>
-            <p className="mt-4 text-slate-700">
+            <p className="mt-4 text-slate-700 leading-8 text-justify">
               Established in 2013, our firm supports clients across diverse industries, business sizes and geographies. With a strong foundation in taxation, audit, financial reporting and regulatory advisory, we deliver solutions that are technically sound and commercially relevant.
             </p>
-            <p className="mt-2 text-slate-700">Our team combines deep subject-matter expertise with disciplined internal processes, ensuring every engagement is executed with precision and accountability. Whether it involves direct tax advisory, statutory audits, FEMA/RBI compliance or transaction support, we focus on providing guidance that is accurate, timely and easy to act upon.</p>
-            <p className="mt-3 text-slate-700">
-              What sets us apart is our senior-led engagement model. Every client receives direct involvement from experienced professionals who understand the complexities of modern business and regulatory landscapes. Through transparent communication and structured workflows, we ensure clarity at every stage.
-              We also collaborate with specialised service partners to provide end-to-end support, helping businesses stay compliant, confident and ready to grow.
-            </p>
+            <p className="mt-2 text-slate-700 leading-8 text-justify">Our team combines deep subject-matter expertise with disciplined internal processes, ensuring every engagement is executed with precision and accountability. Whether it involves direct tax advisory, statutory audits, FEMA/RBI compliance or transaction support, we focus on providing guidance that is accurate, timely and easy to act upon.</p>
           </motion.div>
         </div>
       </section>
 
       {/* ---- STATS ---- */}
-      <section className="relative overflow-hidden py-16 md:py-20">
-        <div className="absolute inset-0 -z-10 bg-[#f1f3f5]" />
-        <div className="mx-auto max-w-7xl px-6">
-          <StatsRibbon />
-        </div>
-      </section>
+      <StatsSection/>
 
 
       {/* ---- SERVICES ---- */}

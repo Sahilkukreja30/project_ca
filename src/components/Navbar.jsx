@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   { href: "/services/direct-international-tax", title: "Direct & International Tax", blurb: "Planning, filings, assessments, appeals" },
@@ -29,6 +29,21 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
   const aboutRef = useRef(null);
   const pathname = usePathname();
+
+  // Timer ref for hover delays
+  const delayRef = useRef({ open: null, close: null });
+
+  // Configurable delays (ms)
+  const OPEN_DELAY = 120;
+  const CLOSE_DELAY = 180;
+
+  // Cleanup timers on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeout(delayRef.current.open);
+      clearTimeout(delayRef.current.close);
+    };
+  }, []);
 
   // Global listeners for escape/outside-click
   useEffect(() => {
@@ -77,6 +92,16 @@ export default function Navbar() {
   const servicesMenuId = "services-desktop-menu";
   const aboutMenuId = "about-desktop-menu";
 
+  // Helpers to open/close with delays (clears opposing timer)
+  const openServicesWithDelay = () => {
+    clearTimeout(delayRef.current.close);
+    delayRef.current.open = setTimeout(() => setServicesOpen(true), OPEN_DELAY);
+  };
+  const closeServicesWithDelay = () => {
+    clearTimeout(delayRef.current.open);
+    delayRef.current.close = setTimeout(() => setServicesOpen(false), CLOSE_DELAY);
+  };
+
   return (
     <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/25 backdrop-blur-sm">
       <motion.div
@@ -92,11 +117,11 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-semibold tracking-tight text-[#0F2742]">
-            Vishal N Shah &amp; Co
-          </span>
-          <span className="text-sm font-semibold tracking-tight text-[#0F2742]">
-            Chartered Accountants
-          </span>
+              Vishal N Shah &amp; Co
+            </span>
+            <span className="text-sm font-semibold tracking-tight text-[#0F2742]">
+              Chartered Accountants
+            </span>
           </div>
         </Link>
 
@@ -107,13 +132,28 @@ export default function Navbar() {
           <NavItem href="/about" active={isActive("/about")}>About</NavItem>
 
           {/* Services dropdown (desktop) */}
-          <div className="relative" ref={dropdownRef}>
+          <div
+            className="relative"
+            ref={dropdownRef}
+            onMouseEnter={openServicesWithDelay}
+            onMouseLeave={closeServicesWithDelay}
+            onFocus={openServicesWithDelay} // open on focus for keyboard users
+            onBlur={(e) => {
+              // close only when focus leaves the wrapper entirely
+              const currentTarget = e.currentTarget;
+              setTimeout(() => {
+                if (document.activeElement && currentTarget && !currentTarget.contains(document.activeElement)) {
+                  closeServicesWithDelay();
+                }
+              }, 0);
+            }}
+            tabIndex={-1}
+          >
             <button
               type="button"
-              onClick={() => setServicesOpen(v => !v)}
-              className={`group inline-flex items-center rounded-full border px-4 py-2 text-sm transition
+              className={`group inline-flex items-center px-4 py-2 text-lg transition
                 ${pathname?.startsWith("/services")
-                  ? "border-[#1FA3A3] text-[#0F2742]"
+                  ? "text-[#1FA3A3]"
                   : "border-slate-300 text-slate-700 hover:border-[#1FA3A3] hover:text-[#0F2742]"}
               `}
               aria-haspopup="menu"
@@ -133,53 +173,58 @@ export default function Navbar() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="pointer-events-none ml-2 h-[2px] w-0 bg-[#1FA3A3] transition-all group-hover:w-4" />
+              <span className="pointer-events-none absolute -bottom-0.5 left-4 h-[2px] w-0 bg-[#1FA3A3] transition-all group-hover:w-6" />
             </button>
 
-            {servicesOpen && (
-              <div
-                id={servicesMenuId}
-                className="absolute right-0 mt-3 w-[720px] max-w-[90vw] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl"
-                role="menu"
-                tabIndex={-1}
-              >
-                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {services.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="group rounded-xl border border-slate-200 p-3 transition hover:border-[#1FA3A3] hover:bg-teal-50/40"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="mt-1 inline-flex h-8 w-8 flex-none items-center justify-center rounded-lg border border-[#0F2742]/15 bg-white text-xs font-semibold text-[#0F2742]">
-                          {iconFromTitle(s.title)}
-                        </span>
-                        <div>
-                          <p className="text-sm font-semibold text-[#0F2742] group-hover:underline">
-                            {s.title}
-                          </p>
-                          <p className="mt-1 text-xs text-slate-600">{s.blurb}</p>
+            {/* Animated dropdown (framer-motion) */}
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  id={servicesMenuId}
+                  role="menu"
+                  tabIndex={-1}
+                  initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.985 }}
+                  transition={{ duration: 0.18, ease: [0.2, 0.9, 0.2, 1] }}
+                  className="absolute right-0 mt-3 w-[720px] max-w-[90vw] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl"
+                >
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {services.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="group rounded-xl border border-slate-200 p-3 transition hover:border-[#1FA3A3] hover:bg-teal-50/40"
+                        onClick={() => {
+                          // helpful on click to immediately close menu on navigation
+                          setServicesOpen(false);
+                        }}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="mt-1 inline-flex h-8 w-8 flex-none items-center justify-center rounded-lg border border-[#0F2742]/15 bg-white text-xs font-semibold text-[#0F2742]">
+                            {iconFromTitle(s.title)}
+                          </span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#0F2742] group-hover:underline">
+                              {s.title}
+                            </p>
+                            <p className="mt-1 text-xs text-slate-600">{s.blurb}</p>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
-                  <span className="font-medium text-[#0F2742]">Need guidance?</span>{" "}
-                  Book a quick call from the Contact page.
-                </div>
-              </div>
-            )}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
+                    <span className="font-medium text-[#0F2742]">Need guidance?</span>{" "}
+                    Book a quick call from the Contact page.
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
+
           <NavItem href="/industry" active={isActive("/industry")}>Sectors</NavItem>
           <NavItem href="/contact" active={isActive("/contact")}>Contact</NavItem>
-
-          <Link
-            href="/contact"
-            className="ml-2 rounded-full bg-[#1FA3A3] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#1FA3A3]/40"
-          >
-            Get Expert Assistance
-          </Link>
         </div>
 
         {/* Mobile button */}
@@ -209,57 +254,15 @@ export default function Navbar() {
               Home
             </MobileLink>
 
-            {/* About accordion (mobile) */}
-            <button
-              type="button"
-              onClick={() => setAboutMobileOpen((v) => !v)}
-              className="mt-2 flex w-full items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-left text-[#0F2742]"
-              aria-expanded={aboutMobileOpen}
-              aria-controls="mobile-about"
-            >
-              <span className="font-medium">About</span>
-              <svg
-                className={`h-4 w-4 text-slate-600 transition-transform ${aboutMobileOpen ? "rotate-180" : ""}`}
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            {aboutMobileOpen && (
-              <div id="mobile-about" className="mt-2 space-y-1">
-                <Link
-                  href="/about"
-                  className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setAboutMobileOpen(false);
-                  }}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/industry"
-                  className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-teal-50"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setAboutMobileOpen(false);
-                  }}
-                >
-                  Industry
-                </Link>
-              </div>
-            )}
+            <MobileLink href="/about" active={isActive("/about")} onNavigate={() => setMenuOpen(false)}>
+              About
+            </MobileLink>
 
             {/* Services accordion (mobile) */}
             <button
               type="button"
               onClick={() => setMobileServicesOpen(v => !v)}
-              className="mt-2 flex w-full items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-left text-[#0F2742]"
+              className="mt-2 flex w-full items-center justify-between  px-3 py-2 text-left text-[#0F2742]"
               aria-expanded={mobileServicesOpen}
               aria-controls="mobile-services"
             >
@@ -293,18 +296,12 @@ export default function Navbar() {
                 ))}
               </div>
             )}
-
+            <MobileLink href="/industry" active={isActive("/industry")} onNavigate={() => setMenuOpen(false)}>
+              Sectors
+            </MobileLink>
             <MobileLink href="/contact" active={isActive("/contact")} onNavigate={() => setMenuOpen(false)}>
               Contact
             </MobileLink>
-
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-4 block rounded-full bg-[#1FA3A3] px-4 py-2 text-center text-sm font-medium text-white shadow-sm hover:brightness-95"
-            >
-              Book a consultation
-            </Link>
           </div>
         </div>
       )}
@@ -318,8 +315,8 @@ function NavItem({ href, children, active }) {
   return (
     <Link
       href={href}
-      className={`group relative inline-flex items-center rounded-full border px-4 py-2 text-sm transition
-        ${active ? "border-[#1FA3A3] text-[#0F2742]" : "border-slate-300 text-slate-700 hover:border-[#1FA3A3] hover:text-[#0F2742]"}
+      className={`group relative inline-flex items-center px-4 py-2 text-lg transition
+        ${active ? "text-[#1FA3A3]" : "text-slate-700"}
       `}
     >
       {children}
@@ -333,7 +330,7 @@ function MobileLink({ href, children, onNavigate, active }) {
     <Link
       href={href}
       onClick={onNavigate}
-      className={`mt-2 block rounded-lg px-3 py-2 ${
+      className={`mt-2 block px-3 py-2 ${
         active ? "bg-teal-50 text-[#0F2742]" : "text-slate-800 hover:bg-slate-50 hover:text-[#0F2742]"
       }`}
     >
