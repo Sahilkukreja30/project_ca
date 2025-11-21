@@ -94,17 +94,13 @@ export default function Contact() {
                 <div className="absolute inset-0 flex items-center pl-6 bg-[#0F2742]/70">
                     <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
                         <h1 className="text-5xl font-semibold text-white">Contact Us</h1>
-                    <div className="flex gap-2">
-                        <Link href={"/"} className="text-white text-lg hover:text-teal-400">Home</Link>
-                        <h1 className="text-white text-sm pt-1">{">>"}</h1>
-                        <h1 className="text-white text-lg">Contact Us</h1>
-                    </div>
+                    
                     </div>
                 </div>
             </section>
 
             {/* Info Section */}
-            <section className="mx-auto max-w-6xl px-6 py-14">
+            <section className="mx-auto max-w-7xl px-6 py-14">
                 <h2 className="mb-12 text-center text-3xl font-semibold text-[#0F2742]">We Are Here!</h2>
 
                 <div className="grid gap-4 text-center md:grid-cols-2">

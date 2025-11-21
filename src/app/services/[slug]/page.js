@@ -286,13 +286,6 @@ export default function ServiceDetailPage({ params }) {
               <h1 className="mx-auto max-w-7xl text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
                 {s.title}
               </h1>
-              <div className="flex flex-wrap gap-1 sm:gap-2">
-                <Link href="/" className="text-white text-sm sm:text-base hover:text-teal-400">Home</Link>
-                <span className="text-white text-xs mt-0.5 sm:text-sm">{">>"}</span>
-                <Link href="/service" className="text-white text-sm sm:text-base hover:text-teal-400">Service</Link>
-                <span className="text-white text-xs mt-0.5 sm:text-sm">{">>"}</span>
-                <span className="text-white text-sm sm:text-base">{s.title}</span>
-              </div>
             </div>
           </div>
         </div>

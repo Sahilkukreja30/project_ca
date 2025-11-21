@@ -6,21 +6,44 @@ import { motion } from "framer-motion";
 /**
  * CoreValues.responsive.tsx
  *
- * Fixed mobile layout:
- *  - On small screens the central circle is rendered inline (in-flow) and smaller so it doesn't overlap cards.
- *  - On md+ screens the decorative circle becomes absolute and larger to overlap cards as intended.
- *  - Card width/spacing adjusted for narrow screens; cards stretch to full width with sensible padding.
- *  - Improved accessible headings and preserved existing API: <CoreValues variant="dark" />
+ * Cards animate from the center circle when they enter the viewport.
  */
 
+const cardPositions = [
+  { x: -90, y: -90 }, // top-left
+  { x: 90, y: -90 }, // top-right
+  { x: -90, y: 90 }, // bottom-left
+  { x: 90, y: 90 }, // bottom-right
+];
+
 const cardAnim = {
-  hidden: { opacity: 0, y: 18, scale: 0.98 },
+  hidden: (i = 0) => {
+    const pos = cardPositions[i] || { x: 0, y: 0 };
+    return { opacity: 0, x: pos.x, y: pos.y, scale: 0.75 };
+  },
   show: (i = 0) => ({
     opacity: 1,
+    x: 0,
     y: 0,
     scale: 1,
-    transition: { delay: i * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      // spring gives a nice organic "pop from center" feel
+      type: "spring",
+      stiffness: 160,
+      damping: 18,
+      mass: 0.6,
+      delay: i * 0.08,
+    },
   }),
+};
+
+const circleAnim = {
+  hidden: { opacity: 0, scale: 0.85 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 140, damping: 16, duration: 0.5 },
+  },
 };
 
 export default function CoreValues({ variant = "light" }) {
@@ -66,7 +89,9 @@ export default function CoreValues({ variant = "light" }) {
           >
             Our Core Values
           </h2>
-          <p className={`${isDark ? "text-sky-300" : "text-slate-600"} mt-2 max-w-2xl mx-auto`}>The guiding principles that shape our client relationships, delivery standards and culture.</p>
+          <p className={`${isDark ? "text-sky-300" : "text-slate-600"} mt-2 max-w-2xl mx-auto`}>
+            The guiding principles that shape our client relationships, delivery standards and culture.
+          </p>
         </div>
 
         {/* Grid wrapper */}
@@ -75,10 +100,12 @@ export default function CoreValues({ variant = "light" }) {
           <motion.article
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.22 }}
             custom={0}
             variants={cardAnim}
-            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"} shadow-sm`}
+            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${
+              isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"
+            } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[0].title}</h3>
             <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[0].body}</p>
@@ -88,10 +115,12 @@ export default function CoreValues({ variant = "light" }) {
           <motion.article
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.22 }}
             custom={1}
             variants={cardAnim}
-            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"} shadow-sm`}
+            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${
+              isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"
+            } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[1].title}</h3>
             <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[1].body}</p>
@@ -99,8 +128,14 @@ export default function CoreValues({ variant = "light" }) {
 
           {/* MOBILE: inline small circle (visible under md) */}
           <div className="md:hidden w-full flex justify-center mt-4">
-            <div
-              className={`flex items-center justify-center rounded-full shadow-xl ${isDark ? "bg-gradient-to-b from-[#083047] to-[#0A2D45] ring-2 ring-[#0F27486b] text-white" : "bg-white ring-2 ring-gray-100 text-[#0F2742]"}`}
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.22 }}
+              variants={circleAnim}
+              className={`flex items-center justify-center rounded-full shadow-xl ${
+                isDark ? "bg-gradient-to-b from-[#083047] to-[#0A2D45] ring-2 ring-[#0F27486b] text-white" : "bg-white ring-2 ring-gray-100 text-[#0F2742]"
+              }`}
               style={{ width: 140, height: 140 }}
               aria-hidden
             >
@@ -108,17 +143,19 @@ export default function CoreValues({ variant = "light" }) {
                 <div className="text-xs font-medium opacity-80">OUR</div>
                 <div className={`text-lg font-bold mt-1 ${isDark ? "text-teal-200" : "text-sky-600"}`}>Core Values</div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Bottom-left */}
           <motion.article
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.22 }}
             custom={2}
             variants={cardAnim}
-            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"} shadow-sm`}
+            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${
+              isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"
+            } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[2].title}</h3>
             <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[2].body}</p>
@@ -128,10 +165,12 @@ export default function CoreValues({ variant = "light" }) {
           <motion.article
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.22 }}
             custom={3}
             variants={cardAnim}
-            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"} shadow-sm`}
+            className={`w-full max-w-3xl sm:max-w-xs p-5 md:p-6 rounded-2xl border ${
+              isDark ? "border-white/10 bg-[#0A2D45]/60" : "border-gray-100 bg-white/80"
+            } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[3].title}</h3>
             <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[3].body}</p>
@@ -139,8 +178,14 @@ export default function CoreValues({ variant = "light" }) {
 
           {/* DESKTOP: absolute center circle (visible on md+) */}
           <div className="hidden md:flex absolute inset-0 pointer-events-none items-center justify-center">
-            <div
-              className={`relative z-10 flex items-center justify-center rounded-full shadow-2xl ${isDark ? "bg-gradient-to-b from-[#083047] to-[#0A2D45] ring-4 ring-[#0F27486b] text-white" : "bg-white ring-4 ring-gray-100 text-[#0F2742]"}`}
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.22 }}
+              variants={circleAnim}
+              className={`relative z-10 flex items-center justify-center rounded-full shadow-2xl ${
+                isDark ? "bg-gradient-to-b from-[#083047] to-[#0A2D45] ring-4 ring-[#0F27486b] text-white" : "bg-white ring-4 ring-gray-100 text-[#0F2742]"
+              }`}
               style={{ width: 220, height: 220 }}
               aria-hidden
             >
@@ -148,7 +193,7 @@ export default function CoreValues({ variant = "light" }) {
                 <div className="text-sm font-medium opacity-80">OUR</div>
                 <div className={`text-2xl font-bold mt-1 ${isDark ? "text-teal-200" : "text-sky-600"}`}>Core Values</div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

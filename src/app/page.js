@@ -20,9 +20,9 @@ export default function HomePage() {
     { src: "/hero3.jpeg", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
   ];
   const sliderSlides = [
-    { src: "/background.png", title: "Welcome to Vishal N Shah & Co", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial.", cta: { label: "Get Expert Assistance", href: "/contact" } },
-    {src:"/slide2.png",title:"Empowering Compliance",subtitle:"Proactive, accurate, and timely regulatory guidance that helps you stay compliant with evolving laws while reducing risk and complexity.",cta: { label: "Get Expert Assistance", href: "/contact" }},
-    {src:"/slide1.png",title:"Enabling Growth",subtitle:"Strategic, practical advisory that enhances efficiency, unlocks opportunities, and supports long-term business expansion.",cta: { label: "Get Expert Assistance", href: "/contact" }}
+    { src: "/background.png", title: "Welcome to Vishal N Shah & Co", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial."},
+    {src:"/slide2.png",title:"Empowering Compliance",subtitle:"Proactive, accurate, and timely regulatory guidance that helps you stay compliant with evolving laws while reducing risk and complexity.",},
+    {src:"/slide1.png",title:"Enabling Growth",subtitle:"Strategic, practical advisory that enhances efficiency, unlocks opportunities, and supports long-term business expansion.",}
   ];
   const fadeSlide = (dir = "left", distance = 60) => {
     const x = dir === "left" ? -distance : dir === "right" ? distance : 0;
@@ -41,10 +41,6 @@ export default function HomePage() {
   const slideSub = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.62, delay: 0.12, ease: [0.22, 1, 0.36, 1] } },
-  };
-  const slideCta = {
-    hidden: { y: 18, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.62, delay: 0.24, ease: [0.22, 1, 0.36, 1] } },
   };
   return (
     <main className="bg-white">
@@ -87,19 +83,7 @@ export default function HomePage() {
                       {s.subtitle}
                     </motion.p>
 
-                    <motion.div
-                      variants={slideCta}
-                      initial="hidden"
-                      animate={isActive ? "visible" : "hidden"}
-                      className="mt-6 flex gap-3"
-                    >
-                      <Link href={s.cta.href} className="rounded-full bg-[#1FA3A3] px-5 py-3 text-sm font-medium text-white hover:brightness-95">
-                        {s.cta.label}
-                      </Link>
-                      <Link href="/contact" className="rounded-full border border-white/30 px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5">
-                        Contact
-                      </Link>
-                    </motion.div>
+                    
                   </div>
                 </div>
               </div>
