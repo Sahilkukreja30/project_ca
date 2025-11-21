@@ -112,9 +112,6 @@ export default function Navbar() {
       >
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="grid h-8 w-8 place-items-center rounded-md border border-[#0F2742]/15 bg-white text-sm font-bold text-[#0F2742] shadow-sm">
-            VN
-          </div>
           <div className="flex flex-col">
             <span className="text-xl font-semibold tracking-tight text-[#0F2742]">
               Vishal N Shah &amp; Co
