@@ -42,7 +42,7 @@ const FOOTER_DATA = {
         ],
       },
     ],
-    email: "office@vnsca.in",
+    email: "office@vnsco.in",
     socials: {
       twitter: "#",
       linkedin: "#",
@@ -67,9 +67,9 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <span className="text-[1.5rem] font-semibold">{brand.name}</span>
               </div>
-              <p className="mt-3 text-[0.95rem] text-white/75 max-w-sm">{brand.blurb}</p>
+              <p className="mt-3 text-[0.95rem] text-white/75 max-w-sm text-justify">{brand.blurb}</p>
 
-              
+
             </div>
 
             {/* Quick Links */}
@@ -105,18 +105,29 @@ export default function Footer() {
               <h4 className="text-lg font-semibold">Our Offices</h4>
               <div className="mt-4 space-y-4 text-sm">
                 <div className="flex items-start gap-2 text-white/90">
-                  <MapPin className="h-4 w-4 mt-0.5" />
+                  <MapPin className="h-8 w-8" />
                   <div>
-                    {contact.offices.map((ofc, idx) => (
-                      <div key={idx} className="mb-3">
-                        <div className="font-medium">{ofc.city}</div>
-                        <address className="not-italic text-white/70 text-sm leading-relaxed">
-                          {ofc.address.map((line, i) => (
-                            <div key={i}>{line}</div>
-                          ))}
-                        </address>
-                      </div>
-                    ))}
+                    <div className="">
+                      <div className="font-medium mt-1.5">Mumbai (Head Office)</div>
+                      <address className="not-italic text-white/70 text-sm leading-relaxed">
+                        B-508, Neelkanth Business Park,
+                        VidyaVihar West, Mumbai 400086,
+                        India
+                      </address>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2 text-white/90">
+                  <MapPin className="h-8 w-8" />
+                  <div>
+                    <div className="mb-3">
+                      <div className="font-medium mt-1.5">Dubai</div>
+                      <address className="not-italic text-white/70 text-sm leading-relaxed">
+                        Room No. 502, Office No. 5-L3-3,
+                        Sony Building, Al Raffa, Dubai,
+                        UAE
+                      </address>
+                    </div>
                   </div>
                 </div>
 

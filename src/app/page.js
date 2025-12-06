@@ -16,11 +16,11 @@ import StatsSection from "@/components/StatsStrip";
 export default function HomePage() {
 
   const partnerSlides = [
-    { src: "/hero.png", name: "CA Vishal N Shah", role: "Founder & Partner" },
+    { src: "/hero.png", name: "CA Vishal N. Shah", role: "Founder & Partner" },
     { src: "/hero3.jpeg", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
   ];
   const sliderSlides = [
-    { src: "/background.png", title: "Welcome to Vishal N Shah & Co", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial."},
+    { src: "/background.png", title: "Welcome to Vishal N. Shah & Co.", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial."},
     {src:"/slide2.png",title:"Empowering Compliance",subtitle:"Proactive, accurate, and timely regulatory guidance that helps you stay compliant with evolving laws while reducing risk and complexity.",},
     {src:"/slide1.png",title:"Enabling Growth",subtitle:"Strategic, practical advisory that enhances efficiency, unlocks opportunities, and supports long-term business expansion.",}
   ];
@@ -125,9 +125,9 @@ export default function HomePage() {
               Practical advice. Dependable execution.
             </h2>
             <p className="mt-4 text-slate-700 leading-8 text-justify">
-              Established in 2013, our firm supports clients across diverse industries, business sizes and geographies. With a strong foundation in taxation, audit, financial reporting and regulatory advisory, we deliver solutions that are technically sound and commercially relevant.
+              Established in 2013, our firm supports clients across diverse industries, business sizes and geographies. With a strong foundation in Taxation, Audit, Financial reporting and Regulatory advisory, we deliver solutions that are technically sound and commercially relevant.
             </p>
-            <p className="mt-2 text-slate-700 leading-8 text-justify">Our team combines deep subject-matter expertise with disciplined internal processes, ensuring every engagement is executed with precision and accountability. Whether it involves direct tax advisory, statutory audits, FEMA/RBI compliance or transaction support, we focus on providing guidance that is accurate, timely and easy to act upon.</p>
+            <p className="mt-2 text-slate-700 leading-8 text-justify">Our team combines deep subject-matter expertise with disciplined internal processes, ensuring every engagement is executed with Precision and Accountability. Whether it involves Direct tax advisory, statutory audits, FEMA/RBI compliance or Transaction support, we focus on providing guidance that is accurate, timely and easy to act upon.</p>
           </motion.div>
         </div>
       </section>

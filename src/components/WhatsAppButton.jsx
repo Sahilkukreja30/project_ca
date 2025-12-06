@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function WhatsAppButton() {
   // Replace with your business number in international format (no + or spaces)
-  const phoneNumber = "919876543210"; // Example: +91 98765 43210
+  const phoneNumber = "+918956668555"; // Example: +91 98765 43210
   const message = "Hello! I’d like to know more about your services.";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

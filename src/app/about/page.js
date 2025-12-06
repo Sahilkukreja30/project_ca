@@ -57,7 +57,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative h-[300px] sm:h-[360px] md:h-[450px] overflow-hidden rounded-2xl border border-slate-100 shadow"
+          className="relative h-[300px] sm:h-[360px] md:h-[500px] overflow-hidden rounded-2xl border border-slate-100 shadow"
         >
           <div className="relative h-full w-full">
             <Image src="/hero.png" alt="CA Vishal N Shah" fill className="object-cover" priority />
@@ -73,14 +73,24 @@ export default function AboutPage() {
           className="space-y-3"
         >
           <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Founder — Vishal N Shah</h2>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            Vishal Shah, a qualified Chartered Accountant and the founder of VN Shah & Co., brings over a decade of expertise in finance, taxation and business advisory. He has played a pivotal role in guiding businesses toward sustainable financial management, compliance excellence and strategic growth.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            Vishal Shah, a specialist in Indirect taxes, qualified Chartered Accountant brings over 10 years
+            of expertise in <span className="font-bold">Finance</span>, <span className="font-bold">Taxation</span>, and <span className="font-bold">Business advisory</span>. With a strong track record of
+            delivering strategic financial solutions, he has been instrumental in helping businesses achieve
+            growth, compliance, and profitability
           </p>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            Vishal specialises in direct & indirect taxation, domestic and international taxation, corporate finance, business valuations, due diligence and transaction structuring. His experience spans across industries and includes handling appellate matters, government liaison, M&A support and project financing.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            At VN Shah & Co., he leads a team that provides a full suite of professional services including <span className="font-bold">Audit and Assurance, Indirect taxation, Accounting and Bookkeeping,</span> <span className="font-bold">Business valuation, company formation, and Compliance management.</span> Additionally, his
+            business acumen is brilliantly reflected in his virtual CFO roles. His commitment to accuracy,
+            integrity, and innovation ensures that every client receives tailored solutions suited to their
+            business needs.
+
           </p>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            As a virtual CFO for multiple organisations, he blends analytical depth with practical execution. His leadership is grounded in integrity, accuracy and a commitment to delivering customised financial solutions.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            Driven by a passion for empowering entrepreneurs and strengthening financial discipline, he
+            continues to set new standards in client service and professional excellence.
+            With a remarkable career spanning over a <span className="font-bold">decade</span>, he brings extensive expertise to his role
+            and has an illustrious career. He has been a trusted advisor to numerous corporate and noncorporate entities on a wide range of financial matters.
           </p>
         </motion.div>
       </section>
@@ -96,14 +106,27 @@ export default function AboutPage() {
           className="order-2 md:order-1 space-y-3"
         >
           <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Co-Founder — Nishant S Chitalia</h2>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            Nishant Chitalia is a seasoned professional with extensive experience in financial strategy, operations and client advisory. With over a decade of industry expertise, he has led large-scale financial projects and built strong client relationships across corporate and non-corporate entities.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            Nishant Chitalia is a seasoned professional specializing in <span className="font-bold">Direct taxes , IPO advisory, and
+            Corporate fund-raising.</span> With over a decade of industry experience, he combines strong
+            expertise in business strategy, operations, and client relationship management
           </p>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            His specialised expertise includes IPO readiness, fund-raising (debt & equity), capital structuring and regulatory compliance. Nishant works closely with investment bankers, legal advisors and regulatory bodies to manage the end-to-end process of public offerings and corporate financing.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            As a direct tax specialist, he advises clients on <span className="font-bold">Tax planning, Compliance, and Complex structuring matters</span>
+            , helping businesses optimize tax efficiency while meeting regulatory
+            standards.
           </p>
-          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[17px] text-justify leading-relaxed">
-            He also advises organisations on long-term strategy, operational efficiency and sustainable growth initiatives. Nishant’s client-first mindset and deep financial understanding allow him to create high-impact solutions that support long-term success.
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            He also plays a key role in <span className="font-bold">IPO and Corporate fund-raising</span> engagements, working closely with
+            investment bankers, legal counsel, and regulators. His work includes IPO readiness
+            assessments, due diligence coordination, offer document preparation, and ensuring
+            compliance with <span className="font-bold">SEBI</span> and stock exchange requirements. In fund-raising, he supports
+            companies in identifying investors, structuring deals, and securing both equity and debt
+            financing
+          </p>
+          <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
+            Focused on delivering value and sustainable outcomes, he continues to strengthen client
+            relationships and contribute to the firm's growth and innovation
           </p>
         </motion.div>
 
@@ -113,7 +136,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative h-[300px] sm:h-[360px] md:h-[450px] overflow-hidden rounded-2xl border border-slate-100 shadow order-1 md:order-2"
+          className="relative h-[300px] sm:h-[360px] md:h-[480px] overflow-hidden rounded-2xl border border-slate-100 shadow order-1 md:order-2"
         >
           <Image src="/hero3.jpeg" alt="CA Nishant S Chitalia" fill className="object-cover" priority />
         </motion.div>
@@ -153,7 +176,7 @@ export default function AboutPage() {
 
                 <div className="flex-1">
                   <h3 className="text-lg md:text-xl font-semibold text-white">Our Mission</h3>
-                  <p className="mt-2 text-sky-200 text-sm md:text-base leading-relaxed">
+                  <p className="mt-2 text-sky-200 text-sm md:text-base leading-relaxed text-justify">
                     To deliver reliable, compliant and commercially sound financial guidance
                     through deep expertise, confidentiality and uncompromising ethics.
                   </p>
@@ -192,7 +215,7 @@ export default function AboutPage() {
 
                 <div className="flex-1">
                   <h3 className="text-lg md:text-xl font-semibold text-white">Our Vision</h3>
-                  <p className="mt-2 text-sky-200 text-sm md:text-base leading-relaxed">
+                  <p className="mt-2 text-sky-200 text-sm md:text-base leading-relaxed text-justify">
                     To be recognized as a trustworthy, quality-driven and impact-oriented
                     professional services firm, expanding responsibly across regions.
                   </p>

@@ -114,19 +114,23 @@ export default function Contact() {
                         <div className="mt-4 space-y-4 text-slate-600">
                             <div>
                                 <p className="font-semibold text-[#0F2742]">Mumbai (Head Office)</p>
-                                <p className="mt-1 text-sm">
+                                <div className="flex justify-center items-center">
+                                    <p className="mt-1 text-sm text-justify">
                                     B-508, Neelkanth Business Park
                                     <br />
                                     Vidyavihar West, Mumbai 400086
                                 </p>
+                                </div>
                             </div>
                             <div>
                                 <p className="font-semibold text-[#0F2742]">Dubai</p>
-                                <p className="mt-1 text-sm">
+                                <div className="flex justify-center items-center">
+                                    <p className="mt-1 text-sm text-justify">
                                     Plot No 562, Office No FL4-33
                                     <br />
                                     Sony Building, Al Raffa, Dubai, UAE
                                 </p>
+                                </div>
                             </div>
                         </div>
                     </article>

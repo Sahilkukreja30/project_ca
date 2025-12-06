@@ -9,12 +9,12 @@ const services = [
   { href: "/services/direct-international-tax", title: "Direct & International Tax", blurb: "Planning, filings, assessments, appeals" },
   { href: "/services/gst-indirect-tax", title: "GST & Indirect Tax", blurb: "Registration, returns, audits, refunds" },
   { href: "/services/audit-assurance", title: "Audit & Assurance", blurb: "Statutory, internal, trust, special audits" },
-  { href: "/services/accounting-payroll", title: "Accounting & Payroll", blurb: "Books, payroll, MIS, controllership" },
+  { href: "/services/accounting-bookkeeping", title: "Bookkeeping & Accounting", blurb: "Books, payroll, MIS, controllership" },
   { href: "/services/fema-rbi", title: "FEMA & RBI Compliance", blurb: "Investments, compounding, filings" },
-  { href: "/services/companies-act", title: "Companies Act & Secretarial", blurb: "Incorporation, ROC, governance" },
+  { href: "/services/virtual-cfo-services", title: "Virtual CFO Services", blurb: "Financial strategy, budgeting, reporting" },
   { href: "/services/valuation-transactions", title: "Valuation & Transactions", blurb: "Valuation, DD, M&A support" },
   { href: "/services/nri-foreign-desk", title: "NRI & Foreign Desk", blurb: "Setup, compliance, taxation" },
-  { href: "/services/startups-msme", title: "Startups & MSME", blurb: "Entity setup, incentives, compliance" },
+  { href: "/services/ipo-coordination", title: "IPO Coordination and Fund Raising Services", blurb: "Stakeholder Coordination, Investor Outreach" },
 ];
 
 export default function Navbar() {
@@ -114,7 +114,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <div className="flex flex-col">
             <span className="text-xl font-semibold tracking-tight text-[#0F2742]">
-              Vishal N Shah &amp; Co
+              Vishal N. Shah &amp; Co.
             </span>
             <span className="text-sm font-semibold tracking-tight text-[#0F2742]">
               Chartered Accountants

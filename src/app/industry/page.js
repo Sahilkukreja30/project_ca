@@ -19,6 +19,9 @@ const industries = [
   "Media & Production Houses",
   "Jewellery",
   "Infrastructure Development",
+  "Family Offices",
+  "Manufacturing",
+  "C&F",
 ];
 
 /* ---------- Inline SVG icon components ---------- */
@@ -45,6 +48,38 @@ function IconIT() {
     </svg>
   );
 }
+function IconFamilyOffice() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 21V9l9-6 9 6v12" />
+      <circle cx="9" cy="14" r="2" />
+      <circle cx="15" cy="14" r="2" />
+      <path d="M6 21v-3a3 3 0 0 1 6 0v3" />
+      <path d="M12 21v-3a3 3 0 0 1 6 0v3" />
+    </svg>
+  );
+}
+function IconManufacturingNew() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 21V10l4 3 4-3v3l4-3v11H3z" />
+      <path d="M14 21h7V8l-3 2-4-3v6" />
+      <path d="M5 21v-3h3v3" />
+      <path d="M10 21v-3h3v3" />
+    </svg>
+  );
+}
+function IconCNF() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 21V10l9-6 9 6v11H3z" />
+      <path d="M7 21v-6h10v6" />
+      <path d="M10 14h4" />
+      <path d="M14 12l2 2-2 2" />
+    </svg>
+  );
+}
+
 
 function IconTextile() {
   return (
@@ -184,6 +219,9 @@ const industryIcons = [
   IconMedia, // Media & Production Houses
   IconJewellery, // Jewellery (placeholder)
   IconEngineering, // Infrastructure Development
+  IconFamilyOffice, // Family Offices
+  IconManufacturingNew, // Manufacturing
+  IconLogistics, // C&F
 ];
 
 export default function IndustryPage() {
