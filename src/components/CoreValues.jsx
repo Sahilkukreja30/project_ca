@@ -108,7 +108,7 @@ export default function CoreValues({ variant = "light" }) {
             } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[0].title}</h3>
-            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[0].body}</p>
+            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm text-justify leading-relaxed`}>{values[0].body}</p>
           </motion.article>
 
           {/* Top-right card */}
@@ -123,7 +123,7 @@ export default function CoreValues({ variant = "light" }) {
             } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[1].title}</h3>
-            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[1].body}</p>
+            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm text-justify leading-relaxed`}>{values[1].body}</p>
           </motion.article>
 
           {/* MOBILE: inline small circle (visible under md) */}
@@ -158,7 +158,7 @@ export default function CoreValues({ variant = "light" }) {
             } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[2].title}</h3>
-            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[2].body}</p>
+            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm text-justify leading-relaxed`}>{values[2].body}</p>
           </motion.article>
 
           {/* Bottom-right */}
@@ -173,7 +173,7 @@ export default function CoreValues({ variant = "light" }) {
             } shadow-sm`}
           >
             <h3 className={`text-lg font-semibold mb-3 ${isDark ? "text-white" : "text-[#0F2742]"}`}>{values[3].title}</h3>
-            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm leading-relaxed`}>{values[3].body}</p>
+            <p className={`${isDark ? "text-sky-200" : "text-slate-700"} text-sm text-justify leading-relaxed`}>{values[3].body}</p>
           </motion.article>
 
           {/* DESKTOP: absolute center circle (visible on md+) */}

@@ -377,14 +377,16 @@ const services = {
   },
 };
 
-export function generateMetadata({ params }) {
-  const s = services[params.slug];
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const s = services[slug];
   if (!s) return { title: "Service" };
   return { title: `${s.title} | Services` };
 }
 
-export default function ServiceDetailPage({ params }) {
-  const s = services[params.slug];
+export default async function ServiceDetailPage({ params }) {
+  const { slug } = await params;
+  const s = services[slug];
   if (!s) {
     return (
       <div className="mx-auto max-w-3xl px-6 py-16">
