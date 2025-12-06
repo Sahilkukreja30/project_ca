@@ -125,8 +125,7 @@ export default function AboutPage() {
             financing
           </p>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
-            Focused on delivering value and sustainable outcomes, he continues to strengthen client
-            relationships and contribute to the firm's growth and innovation
+            {"Focused on delivering value and sustainable outcomes, he continues to strengthen client relationships and contribute to the firm's growth and innovation"}
           </p>
         </motion.div>
 
