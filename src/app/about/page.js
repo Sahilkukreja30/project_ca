@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-gradient-to-r from-[#05223f] to-[#0f7b86]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-20">
           <motion.div variants={fade("up", 24)} initial="hidden" animate="show" className="max-w-3xl">
-            <p className="text-sky-100/90 text-sm font-medium tracking-wide">About VN Shah & Co.</p>
+            <p className="text-sky-100/90 text-sm font-medium tracking-wide">CA Vishal N. Shah & Co.</p>
             <h1 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-white">
               Trusted Chartered Accountants — Practical. Compliant. Commercial.
             </h1>
@@ -72,7 +72,7 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="space-y-3"
         >
-          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Founder — Vishal N Shah</h2>
+          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Founder — CA Vishal N. Shah</h2>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
             Vishal Shah, a specialist in Indirect taxes, qualified Chartered Accountant brings over 10 years
             of expertise in <span className="font-bold">Finance</span>, <span className="font-bold">Taxation</span>, and <span className="font-bold">Business advisory</span>. With a strong track record of
@@ -105,7 +105,7 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="order-2 md:order-1 space-y-3"
         >
-          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Co-Founder — Nishant S Chitalia</h2>
+          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Co-Founder — CA Nishant S Chitalia</h2>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
             Nishant Chitalia is a seasoned professional specializing in <span className="font-bold">Direct taxes , IPO advisory, and
             Corporate fund-raising.</span> With over a decade of industry experience, he combines strong

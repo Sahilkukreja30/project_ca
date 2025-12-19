@@ -228,7 +228,7 @@ export default function Contact() {
                     {/* Map */}
                     <div className="h-[500px] w-full rounded-xl overflow-hidden shadow-lg">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.418349985654!2d72.87796945541994!3d19.0811151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8817e9e7199%3A0x68b6748fa77f9306!2sNeelkanth%20Corporate%20IT%20Park!5e0!3m2!1sen!2sin!4v1758648908149!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6296571027056!2d72.89104868885498!3d19.080013800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c88205ddce43%3A0x35e5ad6cf34aab68!2sNeelkanth%20Business%20Park!5e0!3m2!1sen!2sin!4v1766132282126!5m2!1sen!2sin"
                             className="w-full h-full"
                             style={{ border: 0 }}
                             allowFullScreen=""
