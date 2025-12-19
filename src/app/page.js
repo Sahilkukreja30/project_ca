@@ -16,8 +16,8 @@ import StatsSection from "@/components/StatsStrip";
 export default function HomePage() {
 
   const partnerSlides = [
-    { src: "/hero.png", name: "CA Vishal N. Shah", role: "Founder & Partner" },
-    { src: "/hero3.jpeg", name: "CA Nishant S Chitalia", role: "Co-Founder & Partner" },
+    { src: "/hero.png", name: "Vishal N. Shah", role: "Founder" },
+    { src: "/hero3.jpeg", name: "Nishant S Chitalia", role: "Co-Founder" },
   ];
   const sliderSlides = [
     { src: "/background.png", title: "Welcome to Vishal N. Shah & Co.", subtitle: "Trusted Chartered Accountants — Practical. Compliant. Commercial."},

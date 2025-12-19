@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-gradient-to-r from-[#05223f] to-[#0f7b86]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-20">
           <motion.div variants={fade("up", 24)} initial="hidden" animate="show" className="max-w-3xl">
-            <p className="text-sky-100/90 text-sm font-medium tracking-wide">CA Vishal N. Shah & Co.</p>
+            <p className="text-sky-100/90 text-sm font-medium tracking-wide">Vishal N. Shah & Co.</p>
             <h1 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-white">
               Trusted Chartered Accountants — Practical. Compliant. Commercial.
             </h1>
@@ -72,15 +72,15 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="space-y-3"
         >
-          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Founder — CA Vishal N. Shah</h2>
+          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Founder — Vishal N. Shah</h2>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
-            Vishal Shah, a specialist in Indirect taxes, qualified Chartered Accountant brings over 10 years
+            CA Vishal Shah, a specialist in Indirect taxes, qualified Chartered Accountant brings over 10 years
             of expertise in <span className="font-bold">Finance</span>, <span className="font-bold">Taxation</span>, and <span className="font-bold">Business advisory</span>. With a strong track record of
             delivering strategic financial solutions, he has been instrumental in helping businesses achieve
-            growth, compliance, and profitability
+            growth, compliance, and profitability.
           </p>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
-            At VN Shah & Co., he leads a team that provides a full suite of professional services including <span className="font-bold">Audit and Assurance, Indirect taxation, Accounting and Bookkeeping,</span> <span className="font-bold">Business valuation, company formation, and Compliance management.</span> Additionally, his
+            At Vishal N. Shah & Co., he leads a team that provides a full suite of professional services including <span className="font-bold">Audit and Assurance, Indirect taxation, Accounting and Bookkeeping,</span> <span className="font-bold">Business valuation, company formation, and Compliance management.</span> Additionally, his
             business acumen is brilliantly reflected in his virtual CFO roles. His commitment to accuracy,
             integrity, and innovation ensures that every client receives tailored solutions suited to their
             business needs.
@@ -105,11 +105,11 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.3 }}
           className="order-2 md:order-1 space-y-3"
         >
-          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Co-Founder — CA Nishant S Chitalia</h2>
+          <h2 className="text-2xl sm:text-[2rem] font-semibold text-[#0F2742]">Co-Founder — Nishant S Chitalia</h2>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
             Nishant Chitalia is a seasoned professional specializing in <span className="font-bold">Direct taxes , IPO advisory, and
             Corporate fund-raising.</span> With over a decade of industry experience, he combines strong
-            expertise in business strategy, operations, and client relationship management
+            expertise in business strategy, operations, and client relationship management.
           </p>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
             As a direct tax specialist, he advises clients on <span className="font-bold">Tax planning, Compliance, and Complex structuring matters</span>
@@ -122,10 +122,10 @@ export default function AboutPage() {
             assessments, due diligence coordination, offer document preparation, and ensuring
             compliance with <span className="font-bold">SEBI</span> and stock exchange requirements. In fund-raising, he supports
             companies in identifying investors, structuring deals, and securing both equity and debt
-            financing
+            financing.
           </p>
           <p className="text-slate-700 text-sm sm:text-[15px] md:text-[16.5px] text-justify leading-relaxed">
-            {"Focused on delivering value and sustainable outcomes, he continues to strengthen client relationships and contribute to the firm's growth and innovation"}
+            {"Focused on delivering value and sustainable outcomes, he continues to strengthen client relationships and contribute to the firm's growth and innovation."}
           </p>
         </motion.div>
 
